@@ -1,0 +1,4568 @@
+[2025-08-13 18:56:26] Starting EKS cluster creation process
+[2025-08-13 18:56:26] Initializing Terraform...
+Initializing the backend...
+Upgrading modules...
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for cert_manager...
+- cert_manager in .terraform/modules/cert_manager
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for ebs_csi_driver_irsa...
+- ebs_csi_driver_irsa in .terraform/modules/ebs_csi_driver_irsa
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addons/aws 1.21.0 for eks_blueprints_addons...
+- eks_blueprints_addons in .terraform/modules/eks_blueprints_addons
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for eks_blueprints_addons.argo_events...
+- eks_blueprints_addons.argo_events in .terraform/modules/eks_blueprints_addons.argo_events
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for eks_blueprints_addons.argo_rollouts...
+- eks_blueprints_addons.argo_rollouts in .terraform/modules/eks_blueprints_addons.argo_rollouts
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for eks_blueprints_addons.argo_workflows...
+- eks_blueprints_addons.argo_workflows in .terraform/modules/eks_blueprints_addons.argo_workflows
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for eks_blueprints_addons.argocd...
+- eks_blueprints_addons.argocd in .terraform/modules/eks_blueprints_addons.argocd
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for eks_blueprints_addons.aws_cloudwatch_metrics...
+- eks_blueprints_addons.aws_cloudwatch_metrics in .terraform/modules/eks_blueprints_addons.aws_cloudwatch_metrics
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for eks_blueprints_addons.aws_efs_csi_driver...
+- eks_blueprints_addons.aws_efs_csi_driver in .terraform/modules/eks_blueprints_addons.aws_efs_csi_driver
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for eks_blueprints_addons.aws_for_fluentbit...
+- eks_blueprints_addons.aws_for_fluentbit in .terraform/modules/eks_blueprints_addons.aws_for_fluentbit
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for eks_blueprints_addons.aws_fsx_csi_driver...
+- eks_blueprints_addons.aws_fsx_csi_driver in .terraform/modules/eks_blueprints_addons.aws_fsx_csi_driver
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for eks_blueprints_addons.aws_gateway_api_controller...
+- eks_blueprints_addons.aws_gateway_api_controller in .terraform/modules/eks_blueprints_addons.aws_gateway_api_controller
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for eks_blueprints_addons.aws_load_balancer_controller...
+- eks_blueprints_addons.aws_load_balancer_controller in .terraform/modules/eks_blueprints_addons.aws_load_balancer_controller
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for eks_blueprints_addons.aws_node_termination_handler...
+- eks_blueprints_addons.aws_node_termination_handler in .terraform/modules/eks_blueprints_addons.aws_node_termination_handler
+Downloading registry.terraform.io/terraform-aws-modules/sqs/aws 4.0.1 for eks_blueprints_addons.aws_node_termination_handler_sqs...
+- eks_blueprints_addons.aws_node_termination_handler_sqs in .terraform/modules/eks_blueprints_addons.aws_node_termination_handler_sqs
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for eks_blueprints_addons.aws_privateca_issuer...
+- eks_blueprints_addons.aws_privateca_issuer in .terraform/modules/eks_blueprints_addons.aws_privateca_issuer
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for eks_blueprints_addons.bottlerocket_shadow...
+- eks_blueprints_addons.bottlerocket_shadow in .terraform/modules/eks_blueprints_addons.bottlerocket_shadow
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for eks_blueprints_addons.bottlerocket_update_operator...
+- eks_blueprints_addons.bottlerocket_update_operator in .terraform/modules/eks_blueprints_addons.bottlerocket_update_operator
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for eks_blueprints_addons.cert_manager...
+- eks_blueprints_addons.cert_manager in .terraform/modules/eks_blueprints_addons.cert_manager
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for eks_blueprints_addons.cluster_autoscaler...
+- eks_blueprints_addons.cluster_autoscaler in .terraform/modules/eks_blueprints_addons.cluster_autoscaler
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for eks_blueprints_addons.cluster_proportional_autoscaler...
+- eks_blueprints_addons.cluster_proportional_autoscaler in .terraform/modules/eks_blueprints_addons.cluster_proportional_autoscaler
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for eks_blueprints_addons.external_dns...
+- eks_blueprints_addons.external_dns in .terraform/modules/eks_blueprints_addons.external_dns
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for eks_blueprints_addons.external_secrets...
+- eks_blueprints_addons.external_secrets in .terraform/modules/eks_blueprints_addons.external_secrets
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for eks_blueprints_addons.gatekeeper...
+- eks_blueprints_addons.gatekeeper in .terraform/modules/eks_blueprints_addons.gatekeeper
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for eks_blueprints_addons.ingress_nginx...
+- eks_blueprints_addons.ingress_nginx in .terraform/modules/eks_blueprints_addons.ingress_nginx
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for eks_blueprints_addons.karpenter...
+- eks_blueprints_addons.karpenter in .terraform/modules/eks_blueprints_addons.karpenter
+Downloading registry.terraform.io/terraform-aws-modules/sqs/aws 4.0.1 for eks_blueprints_addons.karpenter_sqs...
+- eks_blueprints_addons.karpenter_sqs in .terraform/modules/eks_blueprints_addons.karpenter_sqs
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for eks_blueprints_addons.kube_prometheus_stack...
+- eks_blueprints_addons.kube_prometheus_stack in .terraform/modules/eks_blueprints_addons.kube_prometheus_stack
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for eks_blueprints_addons.metrics_server...
+- eks_blueprints_addons.metrics_server in .terraform/modules/eks_blueprints_addons.metrics_server
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for eks_blueprints_addons.secrets_store_csi_driver...
+- eks_blueprints_addons.secrets_store_csi_driver in .terraform/modules/eks_blueprints_addons.secrets_store_csi_driver
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for eks_blueprints_addons.secrets_store_csi_driver_provider_aws...
+- eks_blueprints_addons.secrets_store_csi_driver_provider_aws in .terraform/modules/eks_blueprints_addons.secrets_store_csi_driver_provider_aws
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for eks_blueprints_addons.velero...
+- eks_blueprints_addons.velero in .terraform/modules/eks_blueprints_addons.velero
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for eks_blueprints_addons.vpa...
+- eks_blueprints_addons.vpa in .terraform/modules/eks_blueprints_addons.vpa
+- istio in istio
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for istio.istio_base...
+- istio.istio_base in .terraform/modules/istio.istio_base
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for istio.istio_cni...
+- istio.istio_cni in .terraform/modules/istio.istio_cni
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for istio.istio_istiod...
+- istio.istio_istiod in .terraform/modules/istio.istio_istiod
+Downloading registry.terraform.io/terraform-aws-modules/eks/aws 20.37.0 for karpenter...
+- karpenter in .terraform/modules/karpenter/modules/karpenter
+- kubeflow-components in kubeflow
+- mlflow in mlflow
+Downloading registry.terraform.io/aws-ia/eks-blueprints-addon/aws 1.1.1 for profiles-controller-irsa...
+- profiles-controller-irsa in .terraform/modules/profiles-controller-irsa
+- slurm in slurm
+Initializing provider plugins...
+- Finding gavinbunney/kubectl versions matching ">= 1.14.0"...
+- Finding hashicorp/random versions matching ">= 3.6.0"...
+- Finding latest version of hashicorp/null...
+- Finding hashicorp/helm versions matching ">= 2.9.0, ~> 2.17.0"...
+- Finding hashicorp/aws versions matching ">= 2.7.0, >= 4.36.0, >= 4.47.0, >= 5.0.0, >= 5.95.0"...
+- Finding latest version of hashicorp/tls...
+- Finding hashicorp/time versions matching ">= 0.9.0"...
+- Finding hashicorp/kubernetes versions matching ">= 2.20.0"...
+- Using previously-installed hashicorp/aws v6.8.0
+- Using previously-installed hashicorp/tls v4.1.0
+- Using previously-installed hashicorp/time v0.13.1
+- Using previously-installed hashicorp/kubernetes v2.38.0
+- Using previously-installed gavinbunney/kubectl v1.19.0
+- Using previously-installed hashicorp/random v3.7.2
+- Using previously-installed hashicorp/null v3.2.4
+- Using previously-installed hashicorp/helm v2.17.0
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+[2025-08-13 18:56:38] Applying Terraform configuration...
+null_resource.git_clone: Refreshing state... [id=6541184323335191507]
+random_password.static_password: Refreshing state... [id=none]
+random_password.oidc_client_secret: Refreshing state... [id=none]
+random_string.static_user_id: Refreshing state... [id=lRjfEaPmBpjr4gBo]
+module.profiles-controller-irsa.data.aws_partition.current[0]: Reading...
+aws_vpc.vpc: Refreshing state... [id=vpc-0b76bd974b3f6904b]
+module.ebs_csi_driver_irsa.data.aws_caller_identity.current[0]: Reading...
+module.karpenter[0].data.aws_region.current: Reading...
+module.karpenter[0].data.aws_caller_identity.current: Reading...
+module.profiles-controller-irsa.data.aws_caller_identity.current[0]: Reading...
+aws_eip.ip: Refreshing state... [id=eipalloc-05fe6f5d7823f32f7]
+module.karpenter[0].data.aws_partition.current: Reading...
+aws_efs_file_system.fs: Refreshing state... [id=fs-058f520ab98e60ed5]
+data.aws_iam_policy_document.cert_manager: Reading...
+module.profiles-controller-irsa.data.aws_partition.current[0]: Read complete after 0s [id=aws]
+data.aws_caller_identity.current: Reading...
+module.karpenter[0].data.aws_partition.current: Read complete after 0s [id=aws]
+data.aws_iam_policy_document.cert_manager: Read complete after 0s [id=3416383923]
+module.ebs_csi_driver_irsa.data.aws_partition.current[0]: Reading...
+module.karpenter[0].data.aws_region.current: Read complete after 0s [id=ap-southeast-4]
+module.ebs_csi_driver_irsa.data.aws_partition.current[0]: Read complete after 0s [id=aws]
+module.ebs_csi_driver_irsa.data.aws_caller_identity.current[0]: Read complete after 0s [id=043632497353]
+module.profiles-controller-irsa.data.aws_caller_identity.current[0]: Read complete after 0s [id=043632497353]
+module.profiles-controller-irsa.data.aws_iam_policy_document.this[0]: Reading...
+module.karpenter[0].data.aws_caller_identity.current: Read complete after 0s [id=043632497353]
+module.profiles-controller-irsa.data.aws_iam_policy_document.this[0]: Read complete after 0s [id=1576394036]
+data.aws_caller_identity.current: Read complete after 0s [id=043632497353]
+module.karpenter[0].data.aws_iam_policy_document.node_assume_role[0]: Reading...
+module.karpenter[0].data.aws_iam_policy_document.node_assume_role[0]: Read complete after 0s [id=2560088296]
+aws_subnet.private[1]: Refreshing state... [id=subnet-0705bc7c8b5b22fea]
+aws_security_group.efs_sg: Refreshing state... [id=sg-0b0c886fb0b74d7df]
+aws_subnet.private[2]: Refreshing state... [id=subnet-0723a6a23707c4ffe]
+aws_subnet.public[2]: Refreshing state... [id=subnet-08292ddad9a5f491c]
+aws_subnet.private[0]: Refreshing state... [id=subnet-00703776efcad98a4]
+aws_subnet.public[0]: Refreshing state... [id=subnet-02d5373c95f55588f]
+aws_security_group.fsx_lustre_sg: Refreshing state... [id=sg-0b03e6071277beb77]
+aws_subnet.public[1]: Refreshing state... [id=subnet-000a3d0d26dba0949]
+aws_internet_gateway.igw: Refreshing state... [id=igw-0a84056ff90e968d2]
+aws_route_table.public: Refreshing state... [id=rtb-0fea54c1d36f06c4f]
+aws_efs_mount_target.target[0]: Refreshing state... [id=fsmt-0f4306bedd0681298]
+aws_fsx_lustre_file_system.fs: Refreshing state... [id=fs-0cafc107ceb50dc93]
+aws_nat_gateway.ngw: Refreshing state... [id=nat-0e30cb527b1584384]
+aws_efs_mount_target.target[1]: Refreshing state... [id=fsmt-00fcd7122fd8e304e]
+aws_efs_mount_target.target[2]: Refreshing state... [id=fsmt-019b87d7386e5af09]
+aws_route_table_association.public[1]: Refreshing state... [id=rtbassoc-0cebaf53227f0d414]
+aws_route_table_association.public[2]: Refreshing state... [id=rtbassoc-0296d443ce1620107]
+aws_route_table_association.public[0]: Refreshing state... [id=rtbassoc-0787e6071e22821e2]
+aws_route_table.private: Refreshing state... [id=rtb-03616a67e0b7d1bd0]
+aws_fsx_data_repository_association.this: Refreshing state... [id=dra-0e034d4368fb6a74e]
+aws_route_table_association.private[0]: Refreshing state... [id=rtbassoc-07b1e1b9b63b7e6c6]
+aws_route_table_association.private[2]: Refreshing state... [id=rtbassoc-0190d89068d2aa49c]
+aws_route_table_association.private[1]: Refreshing state... [id=rtbassoc-087ee198d8a41591e]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+-/+ destroy and then create replacement
+ <= read (data resources)
+
+Terraform will perform the following actions:
+
+  # data.tls_certificate.this will be read during apply
+  # (config refers to values not yet known)
+ <= data "tls_certificate" "this" {
+      + certificates = (known after apply)
+      + id           = (known after apply)
+      + url          = (known after apply)
+    }
+
+  # aws_eks_cluster.eks_cluster will be created
+  + resource "aws_eks_cluster" "eks_cluster" {
+      + arn                           = (known after apply)
+      + bootstrap_self_managed_addons = true
+      + certificate_authority         = (known after apply)
+      + cluster_id                    = (known after apply)
+      + created_at                    = (known after apply)
+      + enabled_cluster_log_types     = [
+          + "api",
+          + "audit",
+        ]
+      + endpoint                      = (known after apply)
+      + id                            = (known after apply)
+      + identity                      = (known after apply)
+      + name                          = "efa-blog-cluster"
+      + platform_version              = (known after apply)
+      + region                        = "ap-southeast-4"
+      + role_arn                      = (known after apply)
+      + status                        = (known after apply)
+      + tags_all                      = (known after apply)
+      + version                       = "1.33"
+
+      + access_config (known after apply)
+
+      + kubernetes_network_config (known after apply)
+
+      + upgrade_policy (known after apply)
+
+      + vpc_config {
+          + cluster_security_group_id = (known after apply)
+          + endpoint_private_access   = false
+          + endpoint_public_access    = true
+          + public_access_cidrs       = (known after apply)
+          + subnet_ids                = [
+              + "subnet-00703776efcad98a4",
+              + "subnet-0705bc7c8b5b22fea",
+              + "subnet-0723a6a23707c4ffe",
+            ]
+          + vpc_id                    = (known after apply)
+        }
+    }
+
+  # aws_eks_node_group.system_ng will be created
+  + resource "aws_eks_node_group" "system_ng" {
+      + ami_type               = "AL2023_x86_64_STANDARD"
+      + arn                    = (known after apply)
+      + capacity_type          = "ON_DEMAND"
+      + cluster_name           = (known after apply)
+      + disk_size              = 200
+      + id                     = (known after apply)
+      + instance_types         = [
+          + "t3.large",
+          + "t3.xlarge",
+          + "t3.2xlarge",
+          + "m5.large",
+          + "m5.xlarge",
+          + "m5.2xlarge",
+          + "m5.4xlarge",
+          + "m5.large",
+          + "m5.xlarge",
+          + "m5.2xlarge",
+          + "m5.4xlarge",
+        ]
+      + node_group_name        = "system"
+      + node_group_name_prefix = (known after apply)
+      + node_role_arn          = (known after apply)
+      + region                 = "ap-southeast-4"
+      + release_version        = (known after apply)
+      + resources              = (known after apply)
+      + status                 = (known after apply)
+      + subnet_ids             = [
+          + "subnet-00703776efcad98a4",
+          + "subnet-0705bc7c8b5b22fea",
+          + "subnet-0723a6a23707c4ffe",
+        ]
+      + tags_all               = (known after apply)
+      + version                = (known after apply)
+
+      + node_repair_config (known after apply)
+
+      + scaling_config {
+          + desired_size = 8
+          + max_size     = 32
+          + min_size     = 8
+        }
+
+      + update_config (known after apply)
+    }
+
+  # aws_fsx_data_repository_association.this is tainted, so must be replaced
+-/+ resource "aws_fsx_data_repository_association" "this" {
+      ~ arn                              = "arn:aws:fsx:ap-southeast-4:043632497353:association/fs-0cafc107ceb50dc93/dra-0e034d4368fb6a74e" -> (known after apply)
+      + association_id                   = (known after apply)
+      ~ id                               = "dra-0e034d4368fb6a74e" -> (known after apply)
+      ~ imported_file_chunk_size         = 1024 -> (known after apply)
+      - tags                             = {} -> null
+      ~ tags_all                         = {} -> (known after apply)
+        # (6 unchanged attributes hidden)
+
+        # (1 unchanged block hidden)
+    }
+
+  # aws_iam_openid_connect_provider.eks_oidc_provider will be created
+  + resource "aws_iam_openid_connect_provider" "eks_oidc_provider" {
+      + arn             = (known after apply)
+      + client_id_list  = [
+          + "sts.amazonaws.com",
+        ]
+      + id              = (known after apply)
+      + tags_all        = (known after apply)
+      + thumbprint_list = (known after apply)
+      + url             = (known after apply)
+    }
+
+  # aws_iam_role.cluster_autoscaler will be created
+  + resource "aws_iam_role" "cluster_autoscaler" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = (known after apply)
+      + create_date           = (known after apply)
+      + force_detach_policies = false
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = "efa-blog-cluster-cluster-autoscaler-role"
+      + name_prefix           = (known after apply)
+      + path                  = "/"
+      + tags_all              = (known after apply)
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # aws_iam_role.cluster_role will be created
+  + resource "aws_iam_role" "cluster_role" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action    = "sts:AssumeRole"
+                      + Effect    = "Allow"
+                      + Principal = {
+                          + Service = "eks.amazonaws.com"
+                        }
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + create_date           = (known after apply)
+      + force_detach_policies = false
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = "efa-blog-cluster-control-role"
+      + name_prefix           = (known after apply)
+      + path                  = "/"
+      + tags_all              = (known after apply)
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # aws_iam_role.node_role will be created
+  + resource "aws_iam_role" "node_role" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action    = "sts:AssumeRole"
+                      + Effect    = "Allow"
+                      + Principal = {
+                          + Service = "ec2.amazonaws.com"
+                        }
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + create_date           = (known after apply)
+      + force_detach_policies = false
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = (known after apply)
+      + name_prefix           = (known after apply)
+      + path                  = "/"
+      + tags_all              = (known after apply)
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # aws_iam_role.user_profile_role will be created
+  + resource "aws_iam_role" "user_profile_role" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = (known after apply)
+      + create_date           = (known after apply)
+      + force_detach_policies = false
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = (known after apply)
+      + name_prefix           = (known after apply)
+      + path                  = "/"
+      + tags_all              = (known after apply)
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # aws_iam_role_policy.cluster_autoscaler will be created
+  + resource "aws_iam_role_policy" "cluster_autoscaler" {
+      + id          = (known after apply)
+      + name        = "cluster-autoscaler-policy"
+      + name_prefix = (known after apply)
+      + policy      = (known after apply)
+      + role        = (known after apply)
+    }
+
+  # aws_iam_role_policy.user_profile_policy will be created
+  + resource "aws_iam_role_policy" "user_profile_policy" {
+      + id          = (known after apply)
+      + name        = "user-profile-policy"
+      + name_prefix = (known after apply)
+      + policy      = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action   = [
+                          + "s3:Get*",
+                          + "s3:List*",
+                          + "s3:PutObject*",
+                          + "s3:DeleteObject*",
+                        ]
+                      + Effect   = "Allow"
+                      + Resource = [
+                          + "arn:aws:s3:::harish-kubeflow-tf",
+                          + "arn:aws:s3:::harish-kubeflow-tf/*",
+                          + "arn:aws:s3:::sagemaker-ap-southeast-4-043632497353",
+                          + "arn:aws:s3:::sagemaker-ap-southeast-4-043632497353/*",
+                        ]
+                    },
+                  + {
+                      + Action   = [
+                          + "ecr:GetAuthorizationToken",
+                          + "ecr:BatchCheckLayerAvailability",
+                          + "ecr:GetDownloadUrlForLayer",
+                          + "ecr:GetRepositoryPolicy",
+                          + "ecr:DescribeRepositories",
+                          + "ecr:ListImages",
+                          + "ecr:DescribeImages",
+                          + "ecr:BatchGetImage",
+                        ]
+                      + Effect   = "Allow"
+                      + Resource = [
+                          + "*",
+                        ]
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + role        = (known after apply)
+    }
+
+  # aws_iam_role_policy_attachment.cluster_AmazonEKSClusterPolicy will be created
+  + resource "aws_iam_role_policy_attachment" "cluster_AmazonEKSClusterPolicy" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+      + role       = "efa-blog-cluster-control-role"
+    }
+
+  # aws_iam_role_policy_attachment.cluster_AmazonEKSServicePolicy will be created
+  + resource "aws_iam_role_policy_attachment" "cluster_AmazonEKSServicePolicy" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonEKSServicePolicy"
+      + role       = "efa-blog-cluster-control-role"
+    }
+
+  # aws_iam_role_policy_attachment.node_AmazonEC2ContainerRegistryReadOnly will be created
+  + resource "aws_iam_role_policy_attachment" "node_AmazonEC2ContainerRegistryReadOnly" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+      + role       = (known after apply)
+    }
+
+  # aws_iam_role_policy_attachment.node_AmazonEKSWorkerNodePolicy will be created
+  + resource "aws_iam_role_policy_attachment" "node_AmazonEKSWorkerNodePolicy" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"
+      + role       = (known after apply)
+    }
+
+  # aws_iam_role_policy_attachment.node_AmazonEKS_CNI_Policy will be created
+  + resource "aws_iam_role_policy_attachment" "node_AmazonEKS_CNI_Policy" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
+      + role       = (known after apply)
+    }
+
+  # aws_iam_role_policy_attachment.node_AmazonS3ReadOnlyPolicy will be created
+  + resource "aws_iam_role_policy_attachment" "node_AmazonS3ReadOnlyPolicy" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"
+      + role       = (known after apply)
+    }
+
+  # aws_security_group_rule.eks_cluster_ingress will be created
+  + resource "aws_security_group_rule" "eks_cluster_ingress" {
+      + cidr_blocks              = [
+          + "192.168.0.0/16",
+        ]
+      + from_port                = 0
+      + id                       = (known after apply)
+      + protocol                 = "-1"
+      + region                   = "ap-southeast-4"
+      + security_group_id        = (known after apply)
+      + security_group_rule_id   = (known after apply)
+      + self                     = false
+      + source_security_group_id = (known after apply)
+      + to_port                  = 65535
+      + type                     = "ingress"
+    }
+
+  # helm_release.aws-efa-k8s-device-plugin will be created
+  + resource "helm_release" "aws-efa-k8s-device-plugin" {
+      + atomic                     = false
+      + chart                      = "aws-efa-k8s-device-plugin"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "aws-efa-k8s-device-plugin"
+      + namespace                  = "kube-system"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + repository                 = "https://aws.github.io/eks-charts"
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + values                     = [
+          + <<-EOT
+                supportedInstanceLabels:
+                  keys: 
+                    - "node.kubernetes.io/instance-type"
+                  values:
+                    - "trn1.32xlarge"
+                    - "trn1n.32xlarge"
+                    - "trn2.48xlarge"
+                    - "p4d.24xlarge"
+                    - "p4de.24xlarge"
+                    - "p5.48xlarge"
+                    - "p5e.48xlarge"
+                    - "p5en.48xlarge"
+                tolerations:
+                  - key: "nvidia.com/gpu"
+                    operator: "Exists"
+                    effect: "NoSchedule"
+                  - key: "aws.amazon.com/neuron"
+                    operator: "Exists"
+                    effect: "NoSchedule"
+                  - key: "aws.amazon.com/neuroncore"
+                    operator: "Exists"
+                    effect: "NoSchedule"
+                  - key: "aws.amazon.com/neurondevice"
+                    operator: "Exists"
+                    effect: "NoSchedule"
+                  - key: "aws.amazon.com/efa"
+                    operator: "Exists"
+                    effect: "NoSchedule"
+            EOT,
+        ]
+      + verify                     = false
+      + version                    = "v0.4.4"
+      + wait                       = true
+      + wait_for_jobs              = false
+    }
+
+  # helm_release.cluster-autoscaler will be created
+  + resource "helm_release" "cluster-autoscaler" {
+      + atomic                     = false
+      + chart                      = "cluster-autoscaler"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "cluster-autoscaler"
+      + namespace                  = "kube-system"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + repository                 = "https://kubernetes.github.io/autoscaler"
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + values                     = (known after apply)
+      + verify                     = false
+      + version                    = "9.46.6"
+      + wait                       = true
+      + wait_for_jobs              = false
+    }
+
+  # helm_release.cluster-issuer will be created
+  + resource "helm_release" "cluster-issuer" {
+      + atomic                     = false
+      + chart                      = "../../../charts/cluster-issuer"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "cluster-issuer"
+      + namespace                  = "cert-manager"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + values                     = [
+          + <<-EOT
+                cluster_issuer:
+                  name: ca-self-signing-issuer
+            EOT,
+        ]
+      + verify                     = false
+      + version                    = "1.0.0"
+      + wait                       = true
+      + wait_for_jobs              = false
+    }
+
+  # helm_release.dex will be created
+  + resource "helm_release" "dex" {
+      + atomic                     = false
+      + chart                      = "../../../charts/dex"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "dex"
+      + namespace                  = "auth"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + values                     = [
+          + (sensitive value),
+        ]
+      + verify                     = false
+      + version                    = "1.0.0"
+      + wait                       = true
+      + wait_for_jobs              = false
+    }
+
+  # helm_release.ebs-sc will be created
+  + resource "helm_release" "ebs-sc" {
+      + atomic                     = false
+      + chart                      = "../../../charts/ebs-sc"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "ebs-sc"
+      + namespace                  = "default"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + verify                     = false
+      + version                    = "1.0.2"
+      + wait                       = false
+      + wait_for_jobs              = false
+    }
+
+  # helm_release.istio-ingress will be created
+  + resource "helm_release" "istio-ingress" {
+      + atomic                     = false
+      + chart                      = "../../../charts/istio-ingress"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "istio-ingress"
+      + namespace                  = "ingress"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + values                     = [
+          + <<-EOT
+                ingress:
+                  namespace: "ingress"
+                  gateway: "ingress-gateway"
+                healthcheck:
+                  port: 8080
+                  path: "/healthcheck"
+                cluster_issuer:
+                  name: "ca-self-signing-issuer"
+            EOT,
+        ]
+      + verify                     = false
+      + version                    = "1.0.0"
+      + wait                       = true
+      + wait_for_jobs              = false
+    }
+
+  # helm_release.istio-ingressgateway will be created
+  + resource "helm_release" "istio-ingressgateway" {
+      + atomic                     = false
+      + chart                      = "gateway"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + description                = "Istio ingressgateway"
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "istio-ingressgateway"
+      + namespace                  = "ingress"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + repository                 = "https://istio-release.storage.googleapis.com/charts"
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + values                     = [
+          + <<-EOT
+                service:
+                  type: ClusterIP
+                  ports:
+                  - name: status-port
+                    port: 15021
+                    protocol: TCP
+                    targetPort: 15021
+                  - name: http2
+                    port: 80
+                    protocol: TCP
+                    targetPort: 8080
+                  - name: https
+                    port: 443
+                    protocol: TCP
+                    targetPort: 8443
+                  - name: tcp
+                    port: 31400
+                    protocol: TCP
+                    targetPort: 31400
+                  - name: tls
+                    port: 15443
+                    protocol: TCP
+                    targetPort: 15443
+            EOT,
+        ]
+      + verify                     = false
+      + version                    = "1.26.0"
+      + wait                       = true
+      + wait_for_jobs              = false
+    }
+
+  # helm_release.karpenter[0] will be created
+  + resource "helm_release" "karpenter" {
+      + atomic                     = false
+      + chart                      = "karpenter"
+      + cleanup_on_fail            = true
+      + create_namespace           = true
+      + dependency_update          = false
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "karpenter"
+      + namespace                  = "kube-system"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + repository                 = "oci://public.ecr.aws/karpenter/"
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + values                     = (known after apply)
+      + verify                     = false
+      + version                    = "1.5.0"
+      + wait                       = true
+      + wait_for_jobs              = false
+    }
+
+  # helm_release.karpenter-crd[0] will be created
+  + resource "helm_release" "karpenter-crd" {
+      + atomic                     = false
+      + chart                      = "karpenter-crd"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "karpenter-crd"
+      + namespace                  = "kube-system"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + repository                 = "oci://public.ecr.aws/karpenter/"
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + verify                     = false
+      + version                    = "1.5.0"
+      + wait                       = true
+      + wait_for_jobs              = false
+    }
+
+  # helm_release.karpenter_components[0] will be created
+  + resource "helm_release" "karpenter_components" {
+      + atomic                     = false
+      + chart                      = "../../../charts/karpenter-components"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "karpenter-components"
+      + namespace                  = "kube-system"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + values                     = (known after apply)
+      + verify                     = false
+      + version                    = "1.0.5"
+      + wait                       = true
+      + wait_for_jobs              = false
+    }
+
+  # helm_release.lws will be created
+  + resource "helm_release" "lws" {
+      + atomic                     = false
+      + chart                      = "/tmp/lws/charts/lws"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "lws"
+      + namespace                  = "lws-system"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + verify                     = false
+      + version                    = "0.1.0"
+      + wait                       = true
+      + wait_for_jobs              = false
+    }
+
+  # helm_release.mpi-operator will be created
+  + resource "helm_release" "mpi-operator" {
+      + atomic                     = false
+      + chart                      = "../../../charts/mpi-operator"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "mpi-operator"
+      + namespace                  = "kubeflow"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + verify                     = false
+      + version                    = "2.1.0"
+      + wait                       = true
+      + wait_for_jobs              = false
+
+      + set {
+          + name  = "namespace"
+          + value = "kubeflow"
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # helm_release.neuron_helm_chart will be created
+  + resource "helm_release" "neuron_helm_chart" {
+      + atomic                     = false
+      + chart                      = "oci://public.ecr.aws/neuron/neuron-helm-chart"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "neuron-helm-chart"
+      + namespace                  = "kube-system"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + values                     = [
+          + <<-EOT
+                scheduler:
+                  enabled: true
+                  customScheduler:
+                    fullnameOverride: "neuron-scheduler"
+                npd:
+                  enabled: false
+            EOT,
+        ]
+      + verify                     = false
+      + version                    = "1.1.1"
+      + wait                       = true
+      + wait_for_jobs              = false
+    }
+
+  # helm_release.nvidia_device_plugin will be created
+  + resource "helm_release" "nvidia_device_plugin" {
+      + atomic                     = false
+      + chart                      = "../../../charts/nvidia-device-plugin"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "nvidia-device-plugin"
+      + namespace                  = "kube-system"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + verify                     = false
+      + version                    = "1.0.0"
+      + wait                       = true
+      + wait_for_jobs              = false
+
+      + set {
+          + name  = "namespace"
+          + value = "kube-system"
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # helm_release.oauth2-proxy will be created
+  + resource "helm_release" "oauth2-proxy" {
+      + atomic                     = false
+      + chart                      = "oauth2-proxy"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + description                = "Oauth2 proxy"
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "oauth2-proxy"
+      + namespace                  = "auth"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + repository                 = "https://oauth2-proxy.github.io/manifests"
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + values                     = [
+          + (sensitive value),
+        ]
+      + verify                     = false
+      + version                    = "6.23.1"
+      + wait                       = true
+      + wait_for_jobs              = false
+    }
+
+  # helm_release.oauth2-proxy-route will be created
+  + resource "helm_release" "oauth2-proxy-route" {
+      + atomic                     = false
+      + chart                      = "../../../charts/oauth2-proxy-route"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "oauth2-proxy-route"
+      + namespace                  = "auth"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + values                     = [
+          + <<-EOT
+                oauth2_proxy:
+                  namespace: auth
+                ingress:
+                  namespace: ingress
+                  gateway: ingress-gateway
+            EOT,
+        ]
+      + verify                     = false
+      + version                    = "1.0.0"
+      + wait                       = true
+      + wait_for_jobs              = false
+    }
+
+  # helm_release.prometheus[0] will be created
+  + resource "helm_release" "prometheus" {
+      + atomic                     = false
+      + chart                      = "kube-prometheus-stack"
+      + cleanup_on_fail            = true
+      + create_namespace           = true
+      + dependency_update          = false
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "prometheus"
+      + namespace                  = "kube-system"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + repository                 = "https://prometheus-community.github.io/helm-charts"
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + verify                     = false
+      + version                    = "60.3.0"
+      + wait                       = true
+      + wait_for_jobs              = false
+
+      + set {
+          + name  = "prometheus.prometheusSpec.serviceMonitorSelectorNilUsesHelmValues"
+          + value = "false"
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # kubectl_manifest.aws_auth[0] will be created
+  + resource "kubectl_manifest" "aws_auth" {
+      + api_version             = (known after apply)
+      + apply_only              = false
+      + force_conflicts         = false
+      + force_new               = false
+      + id                      = (known after apply)
+      + kind                    = (known after apply)
+      + live_manifest_incluster = (sensitive value)
+      + live_uid                = (known after apply)
+      + name                    = (known after apply)
+      + namespace               = (known after apply)
+      + server_side_apply       = false
+      + uid                     = (known after apply)
+      + validate_schema         = true
+      + wait_for_rollout        = true
+      + yaml_body               = (sensitive value)
+      + yaml_body_parsed        = (known after apply)
+      + yaml_incluster          = (sensitive value)
+    }
+
+  # kubernetes_namespace.auth will be created
+  + resource "kubernetes_namespace" "auth" {
+      + id                               = (known after apply)
+      + wait_for_default_service_account = false
+
+      + metadata {
+          + generation       = (known after apply)
+          + labels           = {
+              + "istio-injection" = "enabled"
+            }
+          + name             = "auth"
+          + resource_version = (known after apply)
+          + uid              = (known after apply)
+        }
+    }
+
+  # kubernetes_namespace.ingress will be created
+  + resource "kubernetes_namespace" "ingress" {
+      + id                               = (known after apply)
+      + wait_for_default_service_account = false
+
+      + metadata {
+          + generation       = (known after apply)
+          + labels           = {
+              + "istio-injection" = "enabled"
+            }
+          + name             = "ingress"
+          + resource_version = (known after apply)
+          + uid              = (known after apply)
+        }
+    }
+
+  # kubernetes_namespace.istio_system will be created
+  + resource "kubernetes_namespace" "istio_system" {
+      + id                               = (known after apply)
+      + wait_for_default_service_account = false
+
+      + metadata {
+          + generation       = (known after apply)
+          + labels           = {
+              + "istio-injection"        = "disabled"
+              + "istio-operator-managed" = "Reconcile"
+            }
+          + name             = "istio-system"
+          + resource_version = (known after apply)
+          + uid              = (known after apply)
+        }
+    }
+
+  # kubernetes_namespace.kubeflow will be created
+  + resource "kubernetes_namespace" "kubeflow" {
+      + id                               = (known after apply)
+      + wait_for_default_service_account = false
+
+      + metadata {
+          + generation       = (known after apply)
+          + labels           = {
+              + "istio-injection" = "enabled"
+            }
+          + name             = "kubeflow"
+          + resource_version = (known after apply)
+          + uid              = (known after apply)
+        }
+    }
+
+  # kubernetes_namespace.lws-system will be created
+  + resource "kubernetes_namespace" "lws-system" {
+      + id                               = (known after apply)
+      + wait_for_default_service_account = false
+
+      + metadata {
+          + generation       = (known after apply)
+          + labels           = {
+              + "istio-injection" = "disabled"
+            }
+          + name             = "lws-system"
+          + resource_version = (known after apply)
+          + uid              = (known after apply)
+        }
+    }
+
+  # null_resource.git_clone must be replaced
+-/+ resource "null_resource" "git_clone" {
+      ~ id       = "6541184323335191507" -> (known after apply)
+      ~ triggers = { # forces replacement
+          ~ "always_run" = "2025-08-13T18:35:06Z" -> (known after apply)
+        }
+    }
+
+  # module.cert_manager.data.aws_caller_identity.current[0] will be read during apply
+  # (depends on a resource or a module with changes pending)
+ <= data "aws_caller_identity" "current" {
+      + account_id = (known after apply)
+      + arn        = (known after apply)
+      + id         = (known after apply)
+      + user_id    = (known after apply)
+    }
+
+  # module.cert_manager.data.aws_iam_policy_document.assume[0] will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_iam_policy_document" "assume" {
+      + id            = (known after apply)
+      + json          = (known after apply)
+      + minified_json = (known after apply)
+
+      + statement {
+          + actions = [
+              + "sts:AssumeRole",
+            ]
+          + effect  = "Allow"
+          + sid     = "ExplicitSelfRoleAssumption"
+
+          + condition {
+              + test     = "ArnLike"
+              + values   = [
+                  + (known after apply),
+                ]
+              + variable = "aws:PrincipalArn"
+            }
+
+          + principals {
+              + identifiers = [
+                  + "*",
+                ]
+              + type        = "AWS"
+            }
+        }
+      + statement {
+          + actions = [
+              + "sts:AssumeRoleWithWebIdentity",
+            ]
+          + effect  = "Allow"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "sts.amazonaws.com",
+                ]
+              + variable = (known after apply)
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "system:serviceaccount:cert-manager:cert-manager",
+                ]
+              + variable = (known after apply)
+            }
+
+          + principals {
+              + identifiers = [
+                  + (known after apply),
+                ]
+              + type        = "Federated"
+            }
+        }
+    }
+
+  # module.cert_manager.data.aws_iam_policy_document.this[0] will be read during apply
+  # (depends on a resource or a module with changes pending)
+ <= data "aws_iam_policy_document" "this" {
+      + id                        = (known after apply)
+      + json                      = (known after apply)
+      + minified_json             = (known after apply)
+      + override_policy_documents = []
+      + source_policy_documents   = [
+          + jsonencode(
+                {
+                  + Statement = [
+                      + {
+                          + Action   = "route53:GetChange"
+                          + Effect   = "Allow"
+                          + Resource = "arn:aws:route53:::change/*"
+                        },
+                      + {
+                          + Action   = [
+                              + "route53:ListResourceRecordSets",
+                              + "route53:ChangeResourceRecordSets",
+                            ]
+                          + Effect   = "Allow"
+                          + Resource = "arn:aws:route53:::hostedzone/*"
+                        },
+                      + {
+                          + Action   = "route53:ListHostedZonesByName"
+                          + Effect   = "Allow"
+                          + Resource = "*"
+                        },
+                    ]
+                  + Version   = "2012-10-17"
+                }
+            ),
+        ]
+    }
+
+  # module.cert_manager.data.aws_partition.current[0] will be read during apply
+  # (depends on a resource or a module with changes pending)
+ <= data "aws_partition" "current" {
+      + dns_suffix         = (known after apply)
+      + id                 = (known after apply)
+      + partition          = (known after apply)
+      + reverse_dns_prefix = (known after apply)
+    }
+
+  # module.cert_manager.aws_iam_policy.this[0] will be created
+  + resource "aws_iam_policy" "this" {
+      + arn              = (known after apply)
+      + attachment_count = (known after apply)
+      + description      = "IAM Policy for cert-manager"
+      + id               = (known after apply)
+      + name             = (known after apply)
+      + name_prefix      = "cert-manager-"
+      + path             = "/"
+      + policy           = (known after apply)
+      + policy_id        = (known after apply)
+      + tags_all         = (known after apply)
+    }
+
+  # module.cert_manager.aws_iam_role.this[0] will be created
+  + resource "aws_iam_role" "this" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = (known after apply)
+      + create_date           = (known after apply)
+      + description           = "IRSA for cert-manger"
+      + force_detach_policies = true
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = (known after apply)
+      + name_prefix           = "cert-manager-"
+      + path                  = "/"
+      + tags_all              = (known after apply)
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # module.cert_manager.aws_iam_role_policy_attachment.this[0] will be created
+  + resource "aws_iam_role_policy_attachment" "this" {
+      + id         = (known after apply)
+      + policy_arn = (known after apply)
+      + role       = (known after apply)
+    }
+
+  # module.cert_manager.helm_release.this[0] will be created
+  + resource "helm_release" "this" {
+      + atomic                     = false
+      + chart                      = "cert-manager"
+      + cleanup_on_fail            = false
+      + create_namespace           = true
+      + dependency_update          = false
+      + description                = "A Helm chart to deploy cert-manager"
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "cert-manager"
+      + namespace                  = "cert-manager"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + repository                 = "https://charts.jetstack.io"
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + verify                     = false
+      + version                    = "v1.13.3"
+      + wait                       = true
+      + wait_for_jobs              = false
+
+      + set {
+          + name  = "installCRDs"
+          + value = "true"
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn"
+          + value = (known after apply)
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "serviceAccount.name"
+          + value = "cert-manager"
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # module.ebs_csi_driver_irsa.data.aws_iam_policy_document.assume[0] will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_iam_policy_document" "assume" {
+      + id            = (known after apply)
+      + json          = (known after apply)
+      + minified_json = (known after apply)
+
+      + statement {
+          + actions = [
+              + "sts:AssumeRoleWithWebIdentity",
+            ]
+          + effect  = "Allow"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "sts.amazonaws.com",
+                ]
+              + variable = (known after apply)
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "system:serviceaccount:kube-system:ebs-csi-controller-sa",
+                ]
+              + variable = (known after apply)
+            }
+
+          + principals {
+              + identifiers = [
+                  + (known after apply),
+                ]
+              + type        = "Federated"
+            }
+        }
+    }
+
+  # module.ebs_csi_driver_irsa.aws_iam_role.this[0] will be created
+  + resource "aws_iam_role" "this" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = (known after apply)
+      + create_date           = (known after apply)
+      + force_detach_policies = true
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = (known after apply)
+      + name_prefix           = (known after apply)
+      + path                  = "/"
+      + tags_all              = (known after apply)
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # module.ebs_csi_driver_irsa.aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"] will be created
+  + resource "aws_iam_role_policy_attachment" "additional" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
+      + role       = (known after apply)
+    }
+
+  # module.eks_blueprints_addons.data.aws_caller_identity.current will be read during apply
+  # (depends on a resource or a module with changes pending)
+ <= data "aws_caller_identity" "current" {
+      + account_id = (known after apply)
+      + arn        = (known after apply)
+      + id         = (known after apply)
+      + user_id    = (known after apply)
+    }
+
+  # module.eks_blueprints_addons.data.aws_eks_addon_version.this["aws-ebs-csi-driver"] will be read during apply
+  # (depends on a resource or a module with changes pending)
+ <= data "aws_eks_addon_version" "this" {
+      + addon_name         = "aws-ebs-csi-driver"
+      + id                 = (known after apply)
+      + kubernetes_version = "1.33"
+      + most_recent        = true
+      + region             = (known after apply)
+      + version            = (known after apply)
+    }
+
+  # module.eks_blueprints_addons.data.aws_iam_policy_document.aws_efs_csi_driver[0] will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_iam_policy_document" "aws_efs_csi_driver" {
+      + id                        = (known after apply)
+      + json                      = (known after apply)
+      + minified_json             = (known after apply)
+      + override_policy_documents = []
+      + source_policy_documents   = []
+
+      + statement {
+          + actions   = [
+              + "ec2:DescribeAvailabilityZones",
+            ]
+          + resources = [
+              + "*",
+            ]
+          + sid       = "AllowDescribeAvailabilityZones"
+        }
+      + statement {
+          + actions   = [
+              + "elasticfilesystem:DescribeAccessPoints",
+              + "elasticfilesystem:DescribeFileSystems",
+              + "elasticfilesystem:DescribeMountTargets",
+            ]
+          + resources = [
+              + (known after apply),
+              + (known after apply),
+            ]
+          + sid       = "AllowDescribeFileSystems"
+        }
+      + statement {
+          + actions   = [
+              + "elasticfilesystem:CreateAccessPoint",
+              + "elasticfilesystem:TagResource",
+            ]
+          + resources = [
+              + (known after apply),
+            ]
+
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "true",
+                ]
+              + variable = "aws:RequestTag/efs.csi.aws.com/cluster"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "elasticfilesystem:DeleteAccessPoint",
+            ]
+          + resources = [
+              + (known after apply),
+            ]
+          + sid       = "AllowDeleteAccessPoint"
+
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "true",
+                ]
+              + variable = "aws:ResourceTag/efs.csi.aws.com/cluster"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "elasticfilesystem:ClientMount",
+              + "elasticfilesystem:ClientRootAccess",
+              + "elasticfilesystem:ClientWrite",
+            ]
+          + resources = [
+              + (known after apply),
+            ]
+          + sid       = "ClientReadWrite"
+
+          + condition {
+              + test     = "Bool"
+              + values   = [
+                  + "true",
+                ]
+              + variable = "elasticfilesystem:AccessedViaMountTarget"
+            }
+        }
+    }
+
+  # module.eks_blueprints_addons.data.aws_iam_policy_document.aws_fsx_csi_driver[0] will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_iam_policy_document" "aws_fsx_csi_driver" {
+      + id                        = (known after apply)
+      + json                      = (known after apply)
+      + minified_json             = (known after apply)
+      + override_policy_documents = []
+      + source_policy_documents   = []
+
+      + statement {
+          + actions   = [
+              + "iam:AttachRolePolicy",
+              + "iam:CreateServiceLinkedRole",
+              + "iam:PutRolePolicy",
+            ]
+          + resources = [
+              + (known after apply),
+            ]
+          + sid       = "AllowCreateServiceLinkedRoles"
+        }
+      + statement {
+          + actions   = [
+              + "iam:CreateServiceLinkedRole",
+            ]
+          + resources = [
+              + (known after apply),
+            ]
+          + sid       = "AllowCreateServiceLinkedRole"
+
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "fsx.amazonaws.com",
+                ]
+              + variable = "iam:AWSServiceName"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "s3:ListBucket",
+            ]
+          + resources = [
+              + (known after apply),
+            ]
+          + sid       = "AllowListBuckets"
+        }
+      + statement {
+          + actions   = [
+              + "fsx:CreateFileSystem",
+              + "fsx:DeleteFileSystem",
+              + "fsx:UpdateFileSystem",
+            ]
+          + resources = [
+              + (known after apply),
+            ]
+        }
+      + statement {
+          + actions   = [
+              + "fsx:DescribeFileSystems",
+              + "fsx:TagResource",
+            ]
+          + resources = [
+              + (known after apply),
+            ]
+        }
+    }
+
+  # module.eks_blueprints_addons.data.aws_iam_policy_document.aws_load_balancer_controller[0] will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_iam_policy_document" "aws_load_balancer_controller" {
+      + id                        = (known after apply)
+      + json                      = (known after apply)
+      + minified_json             = (known after apply)
+      + override_policy_documents = []
+      + source_policy_documents   = []
+
+      + statement {
+          + actions   = [
+              + "iam:CreateServiceLinkedRole",
+            ]
+          + resources = [
+              + "*",
+            ]
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "elasticloadbalancing.amazonaws.com",
+                ]
+              + variable = "iam:AWSServiceName"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "ec2:DescribeAccountAttributes",
+              + "ec2:DescribeAddresses",
+              + "ec2:DescribeAvailabilityZones",
+              + "ec2:DescribeCoipPools",
+              + "ec2:DescribeInstances",
+              + "ec2:DescribeInternetGateways",
+              + "ec2:DescribeIpamPools",
+              + "ec2:DescribeNetworkInterfaces",
+              + "ec2:DescribeSecurityGroups",
+              + "ec2:DescribeSubnets",
+              + "ec2:DescribeTags",
+              + "ec2:DescribeVpcPeeringConnections",
+              + "ec2:DescribeVpcs",
+              + "ec2:GetCoipPoolUsage",
+              + "ec2:GetSecurityGroupsForVpc",
+              + "elasticloadbalancing:DescribeCapacityReservation",
+              + "elasticloadbalancing:DescribeListenerAttributes",
+              + "elasticloadbalancing:DescribeListenerCertificates",
+              + "elasticloadbalancing:DescribeListeners",
+              + "elasticloadbalancing:DescribeLoadBalancerAttributes",
+              + "elasticloadbalancing:DescribeLoadBalancers",
+              + "elasticloadbalancing:DescribeRules",
+              + "elasticloadbalancing:DescribeSSLPolicies",
+              + "elasticloadbalancing:DescribeTags",
+              + "elasticloadbalancing:DescribeTargetGroupAttributes",
+              + "elasticloadbalancing:DescribeTargetGroups",
+              + "elasticloadbalancing:DescribeTargetHealth",
+              + "elasticloadbalancing:DescribeTrustStores",
+            ]
+          + resources = [
+              + "*",
+            ]
+        }
+      + statement {
+          + actions   = [
+              + "acm:DescribeCertificate",
+              + "acm:ListCertificates",
+              + "cognito-idp:DescribeUserPoolClient",
+              + "iam:GetServerCertificate",
+              + "iam:ListServerCertificates",
+              + "shield:CreateProtection",
+              + "shield:DeleteProtection",
+              + "shield:DescribeProtection",
+              + "shield:GetSubscriptionState",
+              + "waf-regional:AssociateWebACL",
+              + "waf-regional:DisassociateWebACL",
+              + "waf-regional:GetWebACL",
+              + "waf-regional:GetWebACLForResource",
+              + "wafv2:AssociateWebACL",
+              + "wafv2:DisassociateWebACL",
+              + "wafv2:GetWebACL",
+              + "wafv2:GetWebACLForResource",
+            ]
+          + resources = [
+              + "*",
+            ]
+        }
+      + statement {
+          + actions   = [
+              + "ec2:AuthorizeSecurityGroupIngress",
+              + "ec2:RevokeSecurityGroupIngress",
+            ]
+          + resources = [
+              + "*",
+            ]
+        }
+      + statement {
+          + actions   = [
+              + "ec2:CreateSecurityGroup",
+            ]
+          + resources = [
+              + "*",
+            ]
+        }
+      + statement {
+          + actions   = [
+              + "ec2:CreateTags",
+            ]
+          + resources = [
+              + (known after apply),
+            ]
+
+          + condition {
+              + test     = "Null"
+              + values   = [
+                  + "false",
+                ]
+              + variable = "aws:RequestTag/elbv2.k8s.aws/cluster"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "CreateSecurityGroup",
+                ]
+              + variable = "ec2:CreateAction"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "ec2:CreateTags",
+              + "ec2:DeleteTags",
+            ]
+          + resources = [
+              + (known after apply),
+            ]
+
+          + condition {
+              + test     = "Null"
+              + values   = [
+                  + "false",
+                ]
+              + variable = "aws:ResourceTag/elbv2.k8s.aws/cluster"
+            }
+          + condition {
+              + test     = "Null"
+              + values   = [
+                  + "true",
+                ]
+              + variable = "aws:RequestTag/elbv2.k8s.aws/cluster"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "ec2:AuthorizeSecurityGroupIngress",
+              + "ec2:DeleteSecurityGroup",
+              + "ec2:RevokeSecurityGroupIngress",
+            ]
+          + resources = [
+              + "*",
+            ]
+
+          + condition {
+              + test     = "Null"
+              + values   = [
+                  + "false",
+                ]
+              + variable = "aws:ResourceTag/elbv2.k8s.aws/cluster"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "elasticloadbalancing:CreateLoadBalancer",
+              + "elasticloadbalancing:CreateTargetGroup",
+            ]
+          + resources = [
+              + "*",
+            ]
+
+          + condition {
+              + test     = "Null"
+              + values   = [
+                  + "false",
+                ]
+              + variable = "aws:RequestTag/elbv2.k8s.aws/cluster"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "elasticloadbalancing:CreateListener",
+              + "elasticloadbalancing:CreateRule",
+              + "elasticloadbalancing:DeleteListener",
+              + "elasticloadbalancing:DeleteRule",
+            ]
+          + resources = [
+              + "*",
+            ]
+        }
+      + statement {
+          + actions   = [
+              + "elasticloadbalancing:AddTags",
+              + "elasticloadbalancing:RemoveTags",
+            ]
+          + resources = [
+              + (known after apply),
+              + (known after apply),
+              + (known after apply),
+            ]
+
+          + condition {
+              + test     = "Null"
+              + values   = [
+                  + "false",
+                ]
+              + variable = "aws:ResourceTag/elbv2.k8s.aws/cluster"
+            }
+          + condition {
+              + test     = "Null"
+              + values   = [
+                  + "true",
+                ]
+              + variable = "aws:RequestTag/elbv2.k8s.aws/cluster"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "elasticloadbalancing:AddTags",
+              + "elasticloadbalancing:RemoveTags",
+            ]
+          + resources = [
+              + (known after apply),
+              + (known after apply),
+              + (known after apply),
+              + (known after apply),
+            ]
+        }
+      + statement {
+          + actions   = [
+              + "elasticloadbalancing:DeleteLoadBalancer",
+              + "elasticloadbalancing:DeleteTargetGroup",
+              + "elasticloadbalancing:ModifyCapacityReservation",
+              + "elasticloadbalancing:ModifyIpPools",
+              + "elasticloadbalancing:ModifyListenerAttributes",
+              + "elasticloadbalancing:ModifyLoadBalancerAttributes",
+              + "elasticloadbalancing:ModifyTargetGroup",
+              + "elasticloadbalancing:ModifyTargetGroupAttributes",
+              + "elasticloadbalancing:SetIpAddressType",
+              + "elasticloadbalancing:SetSecurityGroups",
+              + "elasticloadbalancing:SetSubnets",
+            ]
+          + resources = [
+              + "*",
+            ]
+
+          + condition {
+              + test     = "Null"
+              + values   = [
+                  + "false",
+                ]
+              + variable = "aws:ResourceTag/elbv2.k8s.aws/cluster"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "elasticloadbalancing:AddTags",
+            ]
+          + resources = [
+              + (known after apply),
+              + (known after apply),
+              + (known after apply),
+            ]
+
+          + condition {
+              + test     = "Null"
+              + values   = [
+                  + "false",
+                ]
+              + variable = "aws:RequestTag/elbv2.k8s.aws/cluster"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "CreateTargetGroup",
+                  + "CreateLoadBalancer",
+                ]
+              + variable = "elasticloadbalancing:CreateAction"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "elasticloadbalancing:DeregisterTargets",
+              + "elasticloadbalancing:RegisterTargets",
+            ]
+          + resources = [
+              + (known after apply),
+            ]
+        }
+      + statement {
+          + actions   = [
+              + "elasticloadbalancing:AddListenerCertificates",
+              + "elasticloadbalancing:ModifyListener",
+              + "elasticloadbalancing:ModifyRule",
+              + "elasticloadbalancing:RemoveListenerCertificates",
+              + "elasticloadbalancing:SetRulePriorities",
+              + "elasticloadbalancing:SetWebAcl",
+            ]
+          + resources = [
+              + "*",
+            ]
+        }
+    }
+
+  # module.eks_blueprints_addons.data.aws_partition.current will be read during apply
+  # (depends on a resource or a module with changes pending)
+ <= data "aws_partition" "current" {
+      + dns_suffix         = (known after apply)
+      + id                 = (known after apply)
+      + partition          = (known after apply)
+      + reverse_dns_prefix = (known after apply)
+    }
+
+  # module.eks_blueprints_addons.data.aws_region.current will be read during apply
+  # (depends on a resource or a module with changes pending)
+ <= data "aws_region" "current" {
+      + description = (known after apply)
+      + endpoint    = (known after apply)
+      + id          = (known after apply)
+      + name        = (known after apply)
+      + region      = (known after apply)
+    }
+
+  # module.eks_blueprints_addons.aws_cloudformation_stack.usage_telemetry[0] will be created
+  + resource "aws_cloudformation_stack" "usage_telemetry" {
+      + id            = (known after apply)
+      + name          = (sensitive value)
+      + on_failure    = "DO_NOTHING"
+      + outputs       = (known after apply)
+      + parameters    = (known after apply)
+      + policy_body   = (known after apply)
+      + region        = "ap-southeast-4"
+      + tags_all      = (known after apply)
+      + template_body = jsonencode(
+            {
+              + AWSTemplateFormatVersion = "2010-09-09"
+              + Description              = "Usage telemetry for EKS Blueprints. (qs-1ubotj5kl)"
+              + Resources                = {
+                  + EmptyResource = {
+                      + Type = "AWS::CloudFormation::WaitConditionHandle"
+                    }
+                }
+            }
+        )
+    }
+
+  # module.eks_blueprints_addons.aws_eks_addon.this["aws-ebs-csi-driver"] will be created
+  + resource "aws_eks_addon" "this" {
+      + addon_name                  = "aws-ebs-csi-driver"
+      + addon_version               = "v1.33.0-eksbuild.1"
+      + arn                         = (known after apply)
+      + cluster_name                = (known after apply)
+      + configuration_values        = (known after apply)
+      + created_at                  = (known after apply)
+      + id                          = (known after apply)
+      + modified_at                 = (known after apply)
+      + preserve                    = true
+      + region                      = "ap-southeast-4"
+      + resolve_conflicts_on_create = "OVERWRITE"
+      + resolve_conflicts_on_update = "OVERWRITE"
+      + service_account_role_arn    = (known after apply)
+      + tags_all                    = (known after apply)
+
+      + timeouts {}
+    }
+
+  # module.eks_blueprints_addons.random_bytes.this will be created
+  + resource "random_bytes" "this" {
+      + base64 = (sensitive value)
+      + hex    = (sensitive value)
+      + length = 2
+    }
+
+  # module.eks_blueprints_addons.time_sleep.this will be created
+  + resource "time_sleep" "this" {
+      + create_duration = "30s"
+      + id              = (known after apply)
+      + triggers        = {
+          + "cluster_endpoint"  = (known after apply)
+          + "cluster_name"      = (known after apply)
+          + "custom"            = null
+          + "oidc_provider_arn" = (known after apply)
+        }
+    }
+
+  # module.karpenter[0].data.aws_iam_policy_document.controller[0] will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_iam_policy_document" "controller" {
+      + id                      = (known after apply)
+      + json                    = (known after apply)
+      + minified_json           = (known after apply)
+      + source_policy_documents = [
+          + (known after apply),
+        ]
+    }
+
+  # module.karpenter[0].data.aws_iam_policy_document.controller_assume_role[0] will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_iam_policy_document" "controller_assume_role" {
+      + id            = (known after apply)
+      + json          = (known after apply)
+      + minified_json = (known after apply)
+
+      + statement {
+          + actions = [
+              + "sts:AssumeRole",
+              + "sts:TagSession",
+            ]
+
+          + principals {
+              + identifiers = [
+                  + "pods.eks.amazonaws.com",
+                ]
+              + type        = "Service"
+            }
+        }
+      + statement {
+          + actions = [
+              + "sts:AssumeRoleWithWebIdentity",
+            ]
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "sts.amazonaws.com",
+                ]
+              + variable = (known after apply)
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "system:serviceaccount:kube-system:karpenter",
+                ]
+              + variable = (known after apply)
+            }
+
+          + principals {
+              + identifiers = [
+                  + (known after apply),
+                ]
+              + type        = "Federated"
+            }
+        }
+    }
+
+  # module.karpenter[0].data.aws_iam_policy_document.queue[0] will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_iam_policy_document" "queue" {
+      + id            = (known after apply)
+      + json          = (known after apply)
+      + minified_json = (known after apply)
+
+      + statement {
+          + actions   = [
+              + "sqs:SendMessage",
+            ]
+          + resources = [
+              + (known after apply),
+            ]
+          + sid       = "SqsWrite"
+
+          + principals {
+              + identifiers = [
+                  + "events.amazonaws.com",
+                  + "sqs.amazonaws.com",
+                ]
+              + type        = "Service"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "sqs:*",
+            ]
+          + effect    = "Deny"
+          + resources = [
+              + (known after apply),
+            ]
+          + sid       = "DenyHTTP"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "false",
+                ]
+              + variable = "aws:SecureTransport"
+            }
+
+          + principals {
+              + identifiers = [
+                  + "*",
+                ]
+              + type        = "*"
+            }
+        }
+    }
+
+  # module.karpenter[0].data.aws_iam_policy_document.v033[0] will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_iam_policy_document" "v033" {
+      + id            = (known after apply)
+      + json          = (known after apply)
+      + minified_json = (known after apply)
+
+      + statement {
+          + actions   = [
+              + "ec2:CreateFleet",
+              + "ec2:RunInstances",
+            ]
+          + resources = [
+              + "arn:aws:ec2:*:*:launch-template/*",
+              + "arn:aws:ec2:*:*:security-group/*",
+              + "arn:aws:ec2:*:*:spot-instances-request/*",
+              + "arn:aws:ec2:*:*:subnet/*",
+              + "arn:aws:ec2:*::image/*",
+              + "arn:aws:ec2:*::snapshot/*",
+            ]
+          + sid       = "AllowScopedEC2InstanceActions"
+        }
+      + statement {
+          + actions   = [
+              + "ec2:CreateFleet",
+              + "ec2:CreateLaunchTemplate",
+              + "ec2:RunInstances",
+            ]
+          + resources = [
+              + "arn:aws:ec2:*:*:fleet/*",
+              + "arn:aws:ec2:*:*:instance/*",
+              + "arn:aws:ec2:*:*:launch-template/*",
+              + "arn:aws:ec2:*:*:network-interface/*",
+              + "arn:aws:ec2:*:*:spot-instances-request/*",
+              + "arn:aws:ec2:*:*:volume/*",
+            ]
+          + sid       = "AllowScopedEC2InstanceActionsWithTags"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = (known after apply)
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:RequestTag/karpenter.sh/nodepool"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "ec2:CreateTags",
+            ]
+          + resources = [
+              + "arn:aws:ec2:*:*:fleet/*",
+              + "arn:aws:ec2:*:*:instance/*",
+              + "arn:aws:ec2:*:*:launch-template/*",
+              + "arn:aws:ec2:*:*:network-interface/*",
+              + "arn:aws:ec2:*:*:spot-instances-request/*",
+              + "arn:aws:ec2:*:*:volume/*",
+            ]
+          + sid       = "AllowScopedResourceCreationTagging"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "RunInstances",
+                  + "CreateFleet",
+                  + "CreateLaunchTemplate",
+                ]
+              + variable = "ec2:CreateAction"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = (known after apply)
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:RequestTag/karpenter.sh/nodepool"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "ec2:CreateTags",
+            ]
+          + resources = [
+              + "arn:aws:ec2:*:*:instance/*",
+            ]
+          + sid       = "AllowScopedResourceTagging"
+
+          + condition {
+              + test     = "ForAllValues:StringEquals"
+              + values   = [
+                  + "karpenter.sh/nodeclaim",
+                  + "Name",
+                ]
+              + variable = "aws:TagKeys"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = (known after apply)
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:ResourceTag/karpenter.sh/nodepool"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "ec2:DeleteLaunchTemplate",
+              + "ec2:TerminateInstances",
+            ]
+          + resources = [
+              + "arn:aws:ec2:*:*:instance/*",
+              + "arn:aws:ec2:*:*:launch-template/*",
+            ]
+          + sid       = "AllowScopedDeletion"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = (known after apply)
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:ResourceTag/karpenter.sh/nodepool"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "ec2:DescribeAvailabilityZones",
+              + "ec2:DescribeImages",
+              + "ec2:DescribeInstanceTypeOfferings",
+              + "ec2:DescribeInstanceTypes",
+              + "ec2:DescribeInstances",
+              + "ec2:DescribeLaunchTemplates",
+              + "ec2:DescribeSecurityGroups",
+              + "ec2:DescribeSpotPriceHistory",
+              + "ec2:DescribeSubnets",
+            ]
+          + resources = [
+              + "*",
+            ]
+          + sid       = "AllowRegionalReadActions"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "ap-southeast-4",
+                ]
+              + variable = "aws:RequestedRegion"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "ssm:GetParameter",
+            ]
+          + resources = [
+              + "arn:aws:ssm:ap-southeast-4::parameter/aws/service/*",
+            ]
+          + sid       = "AllowSSMReadActions"
+        }
+      + statement {
+          + actions   = [
+              + "pricing:GetProducts",
+            ]
+          + resources = [
+              + "*",
+            ]
+          + sid       = "AllowPricingReadActions"
+        }
+      + statement {
+          + actions   = [
+              + "sqs:DeleteMessage",
+              + "sqs:GetQueueAttributes",
+              + "sqs:GetQueueUrl",
+              + "sqs:ReceiveMessage",
+            ]
+          + resources = [
+              + (known after apply),
+            ]
+          + sid       = "AllowInterruptionQueueActions"
+        }
+      + statement {
+          + actions   = [
+              + "iam:PassRole",
+            ]
+          + resources = [
+              + (known after apply),
+            ]
+          + sid       = "AllowPassingInstanceRole"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "ec2.amazonaws.com",
+                ]
+              + variable = "iam:PassedToService"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "iam:CreateInstanceProfile",
+            ]
+          + resources = [
+              + "*",
+            ]
+          + sid       = "AllowScopedInstanceProfileCreationActions"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "ap-southeast-4",
+                ]
+              + variable = "aws:RequestTag/topology.kubernetes.io/region"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = (known after apply)
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:RequestTag/karpenter.k8s.aws/ec2nodeclass"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "iam:TagInstanceProfile",
+            ]
+          + resources = [
+              + "*",
+            ]
+          + sid       = "AllowScopedInstanceProfileTagActions"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "ap-southeast-4",
+                ]
+              + variable = "aws:ResourceTag/topology.kubernetes.io/region"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = (known after apply)
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = (known after apply)
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:RequestTag/karpenter.k8s.aws/ec2nodeclass"
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:ResourceTag/karpenter.k8s.aws/ec2nodeclass"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "iam:AddRoleToInstanceProfile",
+              + "iam:DeleteInstanceProfile",
+              + "iam:RemoveRoleFromInstanceProfile",
+            ]
+          + resources = [
+              + "*",
+            ]
+          + sid       = "AllowScopedInstanceProfileActions"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "ap-southeast-4",
+                ]
+              + variable = "aws:ResourceTag/topology.kubernetes.io/region"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = (known after apply)
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:ResourceTag/karpenter.k8s.aws/ec2nodeclass"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "iam:GetInstanceProfile",
+            ]
+          + resources = [
+              + "*",
+            ]
+          + sid       = "AllowInstanceProfileReadActions"
+        }
+      + statement {
+          + actions   = [
+              + "eks:DescribeCluster",
+            ]
+          + resources = [
+              + (known after apply),
+            ]
+          + sid       = "AllowAPIServerEndpointDiscovery"
+        }
+    }
+
+  # module.karpenter[0].data.aws_iam_policy_document.v1[0] will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_iam_policy_document" "v1" {
+      + id            = (known after apply)
+      + json          = (known after apply)
+      + minified_json = (known after apply)
+
+      + statement {
+          + actions   = [
+              + "ec2:CreateFleet",
+              + "ec2:RunInstances",
+            ]
+          + resources = [
+              + "arn:aws:ec2:ap-southeast-4:*:capacity-reservation/*",
+              + "arn:aws:ec2:ap-southeast-4:*:security-group/*",
+              + "arn:aws:ec2:ap-southeast-4:*:subnet/*",
+              + "arn:aws:ec2:ap-southeast-4::image/*",
+              + "arn:aws:ec2:ap-southeast-4::snapshot/*",
+            ]
+          + sid       = "AllowScopedEC2InstanceAccessActions"
+        }
+      + statement {
+          + actions   = [
+              + "ec2:CreateFleet",
+              + "ec2:RunInstances",
+            ]
+          + resources = [
+              + "arn:aws:ec2:ap-southeast-4:*:launch-template/*",
+            ]
+          + sid       = "AllowScopedEC2LaunchTemplateAccessActions"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = (known after apply)
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:ResourceTag/karpenter.sh/nodepool"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "ec2:CreateFleet",
+              + "ec2:CreateLaunchTemplate",
+              + "ec2:RunInstances",
+            ]
+          + resources = [
+              + "arn:aws:ec2:ap-southeast-4:*:fleet/*",
+              + "arn:aws:ec2:ap-southeast-4:*:instance/*",
+              + "arn:aws:ec2:ap-southeast-4:*:launch-template/*",
+              + "arn:aws:ec2:ap-southeast-4:*:network-interface/*",
+              + "arn:aws:ec2:ap-southeast-4:*:spot-instances-request/*",
+              + "arn:aws:ec2:ap-southeast-4:*:volume/*",
+            ]
+          + sid       = "AllowScopedEC2InstanceActionsWithTags"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = (known after apply)
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + (known after apply),
+                ]
+              + variable = "aws:RequestTag/eks:eks-cluster-name"
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:RequestTag/karpenter.sh/nodepool"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "ec2:CreateTags",
+            ]
+          + resources = [
+              + "arn:aws:ec2:ap-southeast-4:*:fleet/*",
+              + "arn:aws:ec2:ap-southeast-4:*:instance/*",
+              + "arn:aws:ec2:ap-southeast-4:*:launch-template/*",
+              + "arn:aws:ec2:ap-southeast-4:*:network-interface/*",
+              + "arn:aws:ec2:ap-southeast-4:*:spot-instances-request/*",
+              + "arn:aws:ec2:ap-southeast-4:*:volume/*",
+            ]
+          + sid       = "AllowScopedResourceCreationTagging"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "RunInstances",
+                  + "CreateFleet",
+                  + "CreateLaunchTemplate",
+                ]
+              + variable = "ec2:CreateAction"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = (known after apply)
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + (known after apply),
+                ]
+              + variable = "aws:RequestTag/eks:eks-cluster-name"
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:RequestTag/karpenter.sh/nodepool"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "ec2:CreateTags",
+            ]
+          + resources = [
+              + "arn:aws:ec2:ap-southeast-4:*:instance/*",
+            ]
+          + sid       = "AllowScopedResourceTagging"
+
+          + condition {
+              + test     = "ForAllValues:StringEquals"
+              + values   = [
+                  + "eks:eks-cluster-name",
+                  + "karpenter.sh/nodeclaim",
+                  + "Name",
+                ]
+              + variable = "aws:TagKeys"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = (known after apply)
+            }
+          + condition {
+              + test     = "StringEqualsIfExists"
+              + values   = [
+                  + (known after apply),
+                ]
+              + variable = "aws:RequestTag/eks:eks-cluster-name"
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:ResourceTag/karpenter.sh/nodepool"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "ec2:DeleteLaunchTemplate",
+              + "ec2:TerminateInstances",
+            ]
+          + resources = [
+              + "arn:aws:ec2:ap-southeast-4:*:instance/*",
+              + "arn:aws:ec2:ap-southeast-4:*:launch-template/*",
+            ]
+          + sid       = "AllowScopedDeletion"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = (known after apply)
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:ResourceTag/karpenter.sh/nodepool"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "ec2:DescribeAvailabilityZones",
+              + "ec2:DescribeImages",
+              + "ec2:DescribeInstanceTypeOfferings",
+              + "ec2:DescribeInstanceTypes",
+              + "ec2:DescribeInstances",
+              + "ec2:DescribeLaunchTemplates",
+              + "ec2:DescribeSecurityGroups",
+              + "ec2:DescribeSpotPriceHistory",
+              + "ec2:DescribeSubnets",
+            ]
+          + resources = [
+              + "*",
+            ]
+          + sid       = "AllowRegionalReadActions"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "ap-southeast-4",
+                ]
+              + variable = "aws:RequestedRegion"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "ssm:GetParameter",
+            ]
+          + resources = [
+              + "arn:aws:ssm:ap-southeast-4::parameter/aws/service/*",
+            ]
+          + sid       = "AllowSSMReadActions"
+        }
+      + statement {
+          + actions   = [
+              + "pricing:GetProducts",
+            ]
+          + resources = [
+              + "*",
+            ]
+          + sid       = "AllowPricingReadActions"
+        }
+      + statement {
+          + actions   = [
+              + "sqs:DeleteMessage",
+              + "sqs:GetQueueUrl",
+              + "sqs:ReceiveMessage",
+            ]
+          + resources = [
+              + (known after apply),
+            ]
+          + sid       = "AllowInterruptionQueueActions"
+        }
+      + statement {
+          + actions   = [
+              + "iam:PassRole",
+            ]
+          + resources = [
+              + (known after apply),
+            ]
+          + sid       = "AllowPassingInstanceRole"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "ec2.amazonaws.com",
+                ]
+              + variable = "iam:PassedToService"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "iam:CreateInstanceProfile",
+            ]
+          + resources = [
+              + "arn:aws:iam::043632497353:instance-profile/*",
+            ]
+          + sid       = "AllowScopedInstanceProfileCreationActions"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "ap-southeast-4",
+                ]
+              + variable = "aws:RequestTag/topology.kubernetes.io/region"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = (known after apply)
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + (known after apply),
+                ]
+              + variable = "aws:RequestTag/eks:eks-cluster-name"
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:RequestTag/karpenter.k8s.aws/ec2nodeclass"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "iam:TagInstanceProfile",
+            ]
+          + resources = [
+              + "arn:aws:iam::043632497353:instance-profile/*",
+            ]
+          + sid       = "AllowScopedInstanceProfileTagActions"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "ap-southeast-4",
+                ]
+              + variable = "aws:RequestTag/topology.kubernetes.io/region"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "ap-southeast-4",
+                ]
+              + variable = "aws:ResourceTag/topology.kubernetes.io/region"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = (known after apply)
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = (known after apply)
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + (known after apply),
+                ]
+              + variable = "aws:RequestTag/eks:eks-cluster-name"
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:RequestTag/karpenter.k8s.aws/ec2nodeclass"
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:ResourceTag/karpenter.k8s.aws/ec2nodeclass"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "iam:AddRoleToInstanceProfile",
+              + "iam:DeleteInstanceProfile",
+              + "iam:RemoveRoleFromInstanceProfile",
+            ]
+          + resources = [
+              + "arn:aws:iam::043632497353:instance-profile/*",
+            ]
+          + sid       = "AllowScopedInstanceProfileActions"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "ap-southeast-4",
+                ]
+              + variable = "aws:ResourceTag/topology.kubernetes.io/region"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = (known after apply)
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:ResourceTag/karpenter.k8s.aws/ec2nodeclass"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "iam:GetInstanceProfile",
+            ]
+          + resources = [
+              + "arn:aws:iam::043632497353:instance-profile/*",
+            ]
+          + sid       = "AllowInstanceProfileReadActions"
+        }
+      + statement {
+          + actions   = [
+              + "eks:DescribeCluster",
+            ]
+          + resources = [
+              + (known after apply),
+            ]
+          + sid       = "AllowAPIServerEndpointDiscovery"
+        }
+    }
+
+  # module.karpenter[0].aws_cloudwatch_event_rule.this["health_event"] will be created
+  + resource "aws_cloudwatch_event_rule" "this" {
+      + arn            = (known after apply)
+      + description    = "Karpenter interrupt - AWS health event"
+      + event_bus_name = "default"
+      + event_pattern  = jsonencode(
+            {
+              + detail-type = [
+                  + "AWS Health Event",
+                ]
+              + source      = [
+                  + "aws.health",
+                ]
+            }
+        )
+      + force_destroy  = false
+      + id             = (known after apply)
+      + name           = (known after apply)
+      + name_prefix    = "KarpenterHealthEvent-"
+      + region         = "ap-southeast-4"
+      + tags           = (known after apply)
+      + tags_all       = (known after apply)
+    }
+
+  # module.karpenter[0].aws_cloudwatch_event_rule.this["instance_rebalance"] will be created
+  + resource "aws_cloudwatch_event_rule" "this" {
+      + arn            = (known after apply)
+      + description    = "Karpenter interrupt - EC2 instance rebalance recommendation"
+      + event_bus_name = "default"
+      + event_pattern  = jsonencode(
+            {
+              + detail-type = [
+                  + "EC2 Instance Rebalance Recommendation",
+                ]
+              + source      = [
+                  + "aws.ec2",
+                ]
+            }
+        )
+      + force_destroy  = false
+      + id             = (known after apply)
+      + name           = (known after apply)
+      + name_prefix    = "KarpenterInstanceRebalance-"
+      + region         = "ap-southeast-4"
+      + tags           = (known after apply)
+      + tags_all       = (known after apply)
+    }
+
+  # module.karpenter[0].aws_cloudwatch_event_rule.this["instance_state_change"] will be created
+  + resource "aws_cloudwatch_event_rule" "this" {
+      + arn            = (known after apply)
+      + description    = "Karpenter interrupt - EC2 instance state-change notification"
+      + event_bus_name = "default"
+      + event_pattern  = jsonencode(
+            {
+              + detail-type = [
+                  + "EC2 Instance State-change Notification",
+                ]
+              + source      = [
+                  + "aws.ec2",
+                ]
+            }
+        )
+      + force_destroy  = false
+      + id             = (known after apply)
+      + name           = (known after apply)
+      + name_prefix    = "KarpenterInstanceStateChange-"
+      + region         = "ap-southeast-4"
+      + tags           = (known after apply)
+      + tags_all       = (known after apply)
+    }
+
+  # module.karpenter[0].aws_cloudwatch_event_rule.this["spot_interrupt"] will be created
+  + resource "aws_cloudwatch_event_rule" "this" {
+      + arn            = (known after apply)
+      + description    = "Karpenter interrupt - EC2 spot instance interruption warning"
+      + event_bus_name = "default"
+      + event_pattern  = jsonencode(
+            {
+              + detail-type = [
+                  + "EC2 Spot Instance Interruption Warning",
+                ]
+              + source      = [
+                  + "aws.ec2",
+                ]
+            }
+        )
+      + force_destroy  = false
+      + id             = (known after apply)
+      + name           = (known after apply)
+      + name_prefix    = "KarpenterSpotInterrupt-"
+      + region         = "ap-southeast-4"
+      + tags           = (known after apply)
+      + tags_all       = (known after apply)
+    }
+
+  # module.karpenter[0].aws_cloudwatch_event_target.this["health_event"] will be created
+  + resource "aws_cloudwatch_event_target" "this" {
+      + arn            = (known after apply)
+      + event_bus_name = "default"
+      + force_destroy  = false
+      + id             = (known after apply)
+      + region         = "ap-southeast-4"
+      + rule           = (known after apply)
+      + target_id      = "KarpenterInterruptionQueueTarget"
+    }
+
+  # module.karpenter[0].aws_cloudwatch_event_target.this["instance_rebalance"] will be created
+  + resource "aws_cloudwatch_event_target" "this" {
+      + arn            = (known after apply)
+      + event_bus_name = "default"
+      + force_destroy  = false
+      + id             = (known after apply)
+      + region         = "ap-southeast-4"
+      + rule           = (known after apply)
+      + target_id      = "KarpenterInterruptionQueueTarget"
+    }
+
+  # module.karpenter[0].aws_cloudwatch_event_target.this["instance_state_change"] will be created
+  + resource "aws_cloudwatch_event_target" "this" {
+      + arn            = (known after apply)
+      + event_bus_name = "default"
+      + force_destroy  = false
+      + id             = (known after apply)
+      + region         = "ap-southeast-4"
+      + rule           = (known after apply)
+      + target_id      = "KarpenterInterruptionQueueTarget"
+    }
+
+  # module.karpenter[0].aws_cloudwatch_event_target.this["spot_interrupt"] will be created
+  + resource "aws_cloudwatch_event_target" "this" {
+      + arn            = (known after apply)
+      + event_bus_name = "default"
+      + force_destroy  = false
+      + id             = (known after apply)
+      + region         = "ap-southeast-4"
+      + rule           = (known after apply)
+      + target_id      = "KarpenterInterruptionQueueTarget"
+    }
+
+  # module.karpenter[0].aws_iam_policy.controller[0] will be created
+  + resource "aws_iam_policy" "controller" {
+      + arn              = (known after apply)
+      + attachment_count = (known after apply)
+      + description      = "Karpenter controller IAM policy"
+      + id               = (known after apply)
+      + name             = (known after apply)
+      + name_prefix      = "KarpenterController-"
+      + path             = "/"
+      + policy           = (known after apply)
+      + policy_id        = (known after apply)
+      + tags_all         = (known after apply)
+    }
+
+  # module.karpenter[0].aws_iam_role.controller[0] will be created
+  + resource "aws_iam_role" "controller" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = (known after apply)
+      + create_date           = (known after apply)
+      + description           = "Karpenter controller IAM role"
+      + force_detach_policies = true
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = (known after apply)
+      + name_prefix           = (known after apply)
+      + path                  = "/"
+      + tags_all              = (known after apply)
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # module.karpenter[0].aws_iam_role.node[0] will be created
+  + resource "aws_iam_role" "node" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action    = "sts:AssumeRole"
+                      + Effect    = "Allow"
+                      + Principal = {
+                          + Service = "ec2.amazonaws.com"
+                        }
+                      + Sid       = "EKSNodeAssumeRole"
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + create_date           = (known after apply)
+      + force_detach_policies = true
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = (known after apply)
+      + name_prefix           = (known after apply)
+      + path                  = "/"
+      + tags_all              = (known after apply)
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # module.karpenter[0].aws_iam_role_policy_attachment.controller[0] will be created
+  + resource "aws_iam_role_policy_attachment" "controller" {
+      + id         = (known after apply)
+      + policy_arn = (known after apply)
+      + role       = (known after apply)
+    }
+
+  # module.karpenter[0].aws_iam_role_policy_attachment.node["AmazonEC2ContainerRegistryReadOnly"] will be created
+  + resource "aws_iam_role_policy_attachment" "node" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+      + role       = (known after apply)
+    }
+
+  # module.karpenter[0].aws_iam_role_policy_attachment.node["AmazonEKSWorkerNodePolicy"] will be created
+  + resource "aws_iam_role_policy_attachment" "node" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"
+      + role       = (known after apply)
+    }
+
+  # module.karpenter[0].aws_iam_role_policy_attachment.node["AmazonEKS_CNI_Policy"] will be created
+  + resource "aws_iam_role_policy_attachment" "node" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
+      + role       = (known after apply)
+    }
+
+  # module.karpenter[0].aws_iam_role_policy_attachment.node_additional["s3_policy"] will be created
+  + resource "aws_iam_role_policy_attachment" "node_additional" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"
+      + role       = (known after apply)
+    }
+
+  # module.karpenter[0].aws_sqs_queue.this[0] will be created
+  + resource "aws_sqs_queue" "this" {
+      + arn                               = (known after apply)
+      + content_based_deduplication       = false
+      + deduplication_scope               = (known after apply)
+      + delay_seconds                     = 0
+      + fifo_queue                        = false
+      + fifo_throughput_limit             = (known after apply)
+      + id                                = (known after apply)
+      + kms_data_key_reuse_period_seconds = 0
+      + max_message_size                  = 262144
+      + message_retention_seconds         = 300
+      + name                              = (known after apply)
+      + name_prefix                       = (known after apply)
+      + policy                            = (known after apply)
+      + receive_wait_time_seconds         = 0
+      + redrive_allow_policy              = (known after apply)
+      + redrive_policy                    = (known after apply)
+      + region                            = "ap-southeast-4"
+      + sqs_managed_sse_enabled           = true
+      + tags_all                          = (known after apply)
+      + url                               = (known after apply)
+      + visibility_timeout_seconds        = 30
+    }
+
+  # module.karpenter[0].aws_sqs_queue_policy.this[0] will be created
+  + resource "aws_sqs_queue_policy" "this" {
+      + id        = (known after apply)
+      + policy    = (known after apply)
+      + queue_url = (known after apply)
+      + region    = "ap-southeast-4"
+    }
+
+  # module.kubeflow-components.helm_release.kubeflow-roles will be created
+  + resource "helm_release" "kubeflow-roles" {
+      + atomic                     = false
+      + chart                      = "../../../charts/ml-platform/kubeflow-roles"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "kubeflow-roles"
+      + namespace                  = "kubeflow"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + verify                     = false
+      + version                    = "1.0.0"
+      + wait                       = true
+      + wait_for_jobs              = false
+    }
+
+  # module.kubeflow-components.helm_release.kubeflow-training-operator will be created
+  + resource "helm_release" "kubeflow-training-operator" {
+      + atomic                     = false
+      + chart                      = "../../../charts/ml-platform/kubeflow-training-operator"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "kubeflow-training-operator"
+      + namespace                  = "kubeflow"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + verify                     = false
+      + version                    = "1.0.0"
+      + wait                       = true
+      + wait_for_jobs              = false
+
+      + set {
+          + name  = "namespace"
+          + value = "kubeflow"
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # module.kubeflow-components.helm_release.kuberay-operator will be created
+  + resource "helm_release" "kuberay-operator" {
+      + atomic                     = false
+      + chart                      = "kuberay-operator"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "kuberay-operator"
+      + namespace                  = "kubeflow"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + repository                 = "https://ray-project.github.io/kuberay-helm/"
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + verify                     = false
+      + version                    = "1.0.0"
+      + wait                       = true
+      + wait_for_jobs              = false
+    }
+
+  # module.kubeflow-components.helm_release.pv_efs will be created
+  + resource "helm_release" "pv_efs" {
+      + atomic                     = false
+      + chart                      = "../../../charts/pv-efs"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "pv-efs"
+      + namespace                  = "kubeflow"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + verify                     = false
+      + version                    = "1.0.0"
+      + wait                       = true
+      + wait_for_jobs              = false
+
+      + set {
+          + name  = "efs.fs_id"
+          + value = "fs-058f520ab98e60ed5"
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "namespace"
+          + value = "kubeflow"
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # module.kubeflow-components.helm_release.pv_fsx will be created
+  + resource "helm_release" "pv_fsx" {
+      + atomic                     = false
+      + chart                      = "../../../charts/pv-fsx"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "pv-fsx"
+      + namespace                  = "kubeflow"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + verify                     = false
+      + version                    = "1.1.0"
+      + wait                       = true
+      + wait_for_jobs              = false
+
+      + set {
+          + name  = "fsx.dns_name"
+          + value = "fs-0cafc107ceb50dc93.fsx.ap-southeast-4.amazonaws.com"
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "fsx.fs_id"
+          + value = "fs-0cafc107ceb50dc93"
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "fsx.mount_name"
+          + value = "rlkx3bmv"
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "namespace"
+          + value = "kubeflow"
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # module.kubeflow-components.helm_release.user_profile_pv_efs will be created
+  + resource "helm_release" "user_profile_pv_efs" {
+      + atomic                     = false
+      + chart                      = "../../../charts/pv-efs"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "user-profile-pv-efs"
+      + namespace                  = "kubeflow"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + verify                     = false
+      + version                    = "1.0.0"
+      + wait                       = true
+      + wait_for_jobs              = false
+
+      + set {
+          + name  = "efs.claim_name"
+          + value = "pv-efs"
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "efs.class_name"
+          + value = "user-profile-efs-sc"
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "efs.fs_id"
+          + value = "fs-058f520ab98e60ed5"
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "efs.volume_name"
+          + value = "user-profile-pv-efs"
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "namespace"
+          + value = "kubeflow-user-example-com"
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # module.kubeflow-components.helm_release.user_profile_pv_fsx will be created
+  + resource "helm_release" "user_profile_pv_fsx" {
+      + atomic                     = false
+      + chart                      = "../../../charts/pv-fsx"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "user-profile-pv-fsx"
+      + namespace                  = "kubeflow"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + verify                     = false
+      + version                    = "1.1.0"
+      + wait                       = true
+      + wait_for_jobs              = false
+
+      + set {
+          + name  = "fsx.claim_name"
+          + value = "pv-fsx"
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "fsx.class_name"
+          + value = "user-profile-fsx-sc"
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "fsx.dns_name"
+          + value = "fs-0cafc107ceb50dc93.fsx.ap-southeast-4.amazonaws.com"
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "fsx.fs_id"
+          + value = "fs-0cafc107ceb50dc93"
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "fsx.mount_name"
+          + value = "rlkx3bmv"
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "fsx.volume_name"
+          + value = "user-profile-pv-fsx"
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "namespace"
+          + value = "kubeflow-user-example-com"
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # module.kubeflow-components.kubernetes_namespace.kubeflow_user_profile will be created
+  + resource "kubernetes_namespace" "kubeflow_user_profile" {
+      + id                               = (known after apply)
+      + wait_for_default_service_account = false
+
+      + metadata {
+          + annotations      = {
+              + "owner" = "user@example.com"
+            }
+          + generation       = (known after apply)
+          + labels           = {
+              + "istio-injection" = "enabled"
+            }
+          + name             = "kubeflow-user-example-com"
+          + resource_version = (known after apply)
+          + uid              = (known after apply)
+        }
+    }
+
+  # module.kubeflow-components.random_password.minio_secret_key will be created
+  + resource "random_password" "minio_secret_key" {
+      + bcrypt_hash = (sensitive value)
+      + id          = (known after apply)
+      + length      = 32
+      + lower       = true
+      + min_lower   = 0
+      + min_numeric = 0
+      + min_special = 0
+      + min_upper   = 0
+      + number      = true
+      + numeric     = true
+      + result      = (sensitive value)
+      + special     = false
+      + upper       = true
+    }
+
+  # module.kubeflow-components.random_string.minio_access_key will be created
+  + resource "random_string" "minio_access_key" {
+      + id          = (known after apply)
+      + length      = 16
+      + lower       = true
+      + min_lower   = 0
+      + min_numeric = 0
+      + min_special = 0
+      + min_upper   = 0
+      + number      = true
+      + numeric     = true
+      + result      = (known after apply)
+      + special     = false
+      + upper       = true
+    }
+
+  # module.profiles-controller-irsa.data.aws_iam_policy_document.assume[0] will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_iam_policy_document" "assume" {
+      + id            = (known after apply)
+      + json          = (known after apply)
+      + minified_json = (known after apply)
+
+      + statement {
+          + actions = [
+              + "sts:AssumeRoleWithWebIdentity",
+            ]
+          + effect  = "Allow"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "sts.amazonaws.com",
+                ]
+              + variable = (known after apply)
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "system:serviceaccount:kubeflow:profiles-controller-service-account",
+                ]
+              + variable = (known after apply)
+            }
+
+          + principals {
+              + identifiers = [
+                  + (known after apply),
+                ]
+              + type        = "Federated"
+            }
+        }
+    }
+
+  # module.profiles-controller-irsa.aws_iam_policy.this[0] will be created
+  + resource "aws_iam_policy" "this" {
+      + arn              = (known after apply)
+      + attachment_count = (known after apply)
+      + id               = (known after apply)
+      + name             = (known after apply)
+      + name_prefix      = (known after apply)
+      + path             = "/"
+      + policy           = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action   = [
+                          + "iam:UpdateAssumeRolePolicy",
+                          + "iam:GetRole",
+                        ]
+                      + Effect   = "Allow"
+                      + Resource = "*"
+                      + Sid      = "statement0"
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + policy_id        = (known after apply)
+      + tags_all         = (known after apply)
+    }
+
+  # module.profiles-controller-irsa.aws_iam_role.this[0] will be created
+  + resource "aws_iam_role" "this" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = (known after apply)
+      + create_date           = (known after apply)
+      + force_detach_policies = true
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = (known after apply)
+      + name_prefix           = (known after apply)
+      + path                  = "/"
+      + tags_all              = (known after apply)
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # module.profiles-controller-irsa.aws_iam_role_policy_attachment.this[0] will be created
+  + resource "aws_iam_role_policy_attachment" "this" {
+      + id         = (known after apply)
+      + policy_arn = (known after apply)
+      + role       = (known after apply)
+    }
+
+  # module.eks_blueprints_addons.module.aws_efs_csi_driver.data.aws_caller_identity.current[0] will be read during apply
+  # (depends on a resource or a module with changes pending)
+ <= data "aws_caller_identity" "current" {
+      + account_id = (known after apply)
+      + arn        = (known after apply)
+      + id         = (known after apply)
+      + user_id    = (known after apply)
+    }
+
+  # module.eks_blueprints_addons.module.aws_efs_csi_driver.data.aws_iam_policy_document.assume[0] will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_iam_policy_document" "assume" {
+      + id            = (known after apply)
+      + json          = (known after apply)
+      + minified_json = (known after apply)
+
+      + statement {
+          + actions = [
+              + "sts:AssumeRoleWithWebIdentity",
+            ]
+          + effect  = "Allow"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "sts.amazonaws.com",
+                ]
+              + variable = (known after apply)
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "system:serviceaccount:kube-system:efs-csi-controller-sa",
+                ]
+              + variable = (known after apply)
+            }
+
+          + principals {
+              + identifiers = [
+                  + (known after apply),
+                ]
+              + type        = "Federated"
+            }
+        }
+      + statement {
+          + actions = [
+              + "sts:AssumeRoleWithWebIdentity",
+            ]
+          + effect  = "Allow"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "sts.amazonaws.com",
+                ]
+              + variable = (known after apply)
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "system:serviceaccount:kube-system:efs-csi-node-sa",
+                ]
+              + variable = (known after apply)
+            }
+
+          + principals {
+              + identifiers = [
+                  + (known after apply),
+                ]
+              + type        = "Federated"
+            }
+        }
+    }
+
+  # module.eks_blueprints_addons.module.aws_efs_csi_driver.data.aws_iam_policy_document.this[0] will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_iam_policy_document" "this" {
+      + id                        = (known after apply)
+      + json                      = (known after apply)
+      + minified_json             = (known after apply)
+      + override_policy_documents = []
+      + source_policy_documents   = [
+          + (known after apply),
+        ]
+    }
+
+  # module.eks_blueprints_addons.module.aws_efs_csi_driver.data.aws_partition.current[0] will be read during apply
+  # (depends on a resource or a module with changes pending)
+ <= data "aws_partition" "current" {
+      + dns_suffix         = (known after apply)
+      + id                 = (known after apply)
+      + partition          = (known after apply)
+      + reverse_dns_prefix = (known after apply)
+    }
+
+  # module.eks_blueprints_addons.module.aws_efs_csi_driver.aws_iam_policy.this[0] will be created
+  + resource "aws_iam_policy" "this" {
+      + arn              = (known after apply)
+      + attachment_count = (known after apply)
+      + description      = "IAM Policy for AWS EFS CSI Driver"
+      + id               = (known after apply)
+      + name             = (known after apply)
+      + name_prefix      = "aws-efs-csi-driver-"
+      + path             = "/"
+      + policy           = (known after apply)
+      + policy_id        = (known after apply)
+      + tags_all         = (known after apply)
+    }
+
+  # module.eks_blueprints_addons.module.aws_efs_csi_driver.aws_iam_role.this[0] will be created
+  + resource "aws_iam_role" "this" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = (known after apply)
+      + create_date           = (known after apply)
+      + description           = "IRSA for aws-efs-csi-driver project"
+      + force_detach_policies = true
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = (known after apply)
+      + name_prefix           = "aws-efs-csi-driver-"
+      + path                  = "/"
+      + tags_all              = (known after apply)
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # module.eks_blueprints_addons.module.aws_efs_csi_driver.aws_iam_role_policy_attachment.this[0] will be created
+  + resource "aws_iam_role_policy_attachment" "this" {
+      + id         = (known after apply)
+      + policy_arn = (known after apply)
+      + role       = (known after apply)
+    }
+
+  # module.eks_blueprints_addons.module.aws_efs_csi_driver.helm_release.this[0] will be created
+  + resource "helm_release" "this" {
+      + atomic                     = false
+      + chart                      = "aws-efs-csi-driver"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + description                = "A Helm chart to deploy aws-efs-csi-driver"
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "aws-efs-csi-driver"
+      + namespace                  = "kube-system"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + repository                 = "https://kubernetes-sigs.github.io/aws-efs-csi-driver/"
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + values                     = []
+      + verify                     = false
+      + version                    = "3.1.7"
+      + wait                       = false
+      + wait_for_jobs              = false
+
+      + set {
+          + name  = "controller.serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn"
+          + value = (known after apply)
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "controller.serviceAccount.name"
+          + value = "efs-csi-controller-sa"
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "node.serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn"
+          + value = (known after apply)
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "node.serviceAccount.name"
+          + value = "efs-csi-node-sa"
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # module.eks_blueprints_addons.module.aws_fsx_csi_driver.data.aws_caller_identity.current[0] will be read during apply
+  # (depends on a resource or a module with changes pending)
+ <= data "aws_caller_identity" "current" {
+      + account_id = (known after apply)
+      + arn        = (known after apply)
+      + id         = (known after apply)
+      + user_id    = (known after apply)
+    }
+
+  # module.eks_blueprints_addons.module.aws_fsx_csi_driver.data.aws_iam_policy_document.assume[0] will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_iam_policy_document" "assume" {
+      + id            = (known after apply)
+      + json          = (known after apply)
+      + minified_json = (known after apply)
+
+      + statement {
+          + actions = [
+              + "sts:AssumeRoleWithWebIdentity",
+            ]
+          + effect  = "Allow"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "sts.amazonaws.com",
+                ]
+              + variable = (known after apply)
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "system:serviceaccount:kube-system:aws-fsx-csi-controller-sa",
+                ]
+              + variable = (known after apply)
+            }
+
+          + principals {
+              + identifiers = [
+                  + (known after apply),
+                ]
+              + type        = "Federated"
+            }
+        }
+      + statement {
+          + actions = [
+              + "sts:AssumeRoleWithWebIdentity",
+            ]
+          + effect  = "Allow"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "sts.amazonaws.com",
+                ]
+              + variable = (known after apply)
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "system:serviceaccount:kube-system:aws-fsx-csi-node-sa",
+                ]
+              + variable = (known after apply)
+            }
+
+          + principals {
+              + identifiers = [
+                  + (known after apply),
+                ]
+              + type        = "Federated"
+            }
+        }
+    }
+
+  # module.eks_blueprints_addons.module.aws_fsx_csi_driver.data.aws_iam_policy_document.this[0] will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_iam_policy_document" "this" {
+      + id                        = (known after apply)
+      + json                      = (known after apply)
+      + minified_json             = (known after apply)
+      + override_policy_documents = []
+      + source_policy_documents   = [
+          + (known after apply),
+        ]
+    }
+
+  # module.eks_blueprints_addons.module.aws_fsx_csi_driver.data.aws_partition.current[0] will be read during apply
+  # (depends on a resource or a module with changes pending)
+ <= data "aws_partition" "current" {
+      + dns_suffix         = (known after apply)
+      + id                 = (known after apply)
+      + partition          = (known after apply)
+      + reverse_dns_prefix = (known after apply)
+    }
+
+  # module.eks_blueprints_addons.module.aws_fsx_csi_driver.aws_iam_policy.this[0] will be created
+  + resource "aws_iam_policy" "this" {
+      + arn              = (known after apply)
+      + attachment_count = (known after apply)
+      + description      = "IAM Policy for AWS FSX CSI Driver"
+      + id               = (known after apply)
+      + name             = (known after apply)
+      + name_prefix      = "aws-fsx-csi-driver-"
+      + path             = "/"
+      + policy           = (known after apply)
+      + policy_id        = (known after apply)
+      + tags_all         = (known after apply)
+    }
+
+  # module.eks_blueprints_addons.module.aws_fsx_csi_driver.aws_iam_role.this[0] will be created
+  + resource "aws_iam_role" "this" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = (known after apply)
+      + create_date           = (known after apply)
+      + description           = "IRSA for aws-fsx-csi-driver"
+      + force_detach_policies = true
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = (known after apply)
+      + name_prefix           = "aws-fsx-csi-driver-"
+      + path                  = "/"
+      + tags_all              = (known after apply)
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # module.eks_blueprints_addons.module.aws_fsx_csi_driver.aws_iam_role_policy_attachment.this[0] will be created
+  + resource "aws_iam_role_policy_attachment" "this" {
+      + id         = (known after apply)
+      + policy_arn = (known after apply)
+      + role       = (known after apply)
+    }
+
+  # module.eks_blueprints_addons.module.aws_fsx_csi_driver.helm_release.this[0] will be created
+  + resource "helm_release" "this" {
+      + atomic                     = false
+      + chart                      = "aws-fsx-csi-driver"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + description                = "A Helm chart for AWS FSx for Lustre CSI Driver"
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "aws-fsx-csi-driver"
+      + namespace                  = "kube-system"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + repository                 = "https://kubernetes-sigs.github.io/aws-fsx-csi-driver/"
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + values                     = []
+      + verify                     = false
+      + version                    = "1.10.0"
+      + wait                       = false
+      + wait_for_jobs              = false
+
+      + set {
+          + name  = "controller.serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn"
+          + value = (known after apply)
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "controller.serviceAccount.name"
+          + value = "aws-fsx-csi-controller-sa"
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "node.serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn"
+          + value = (known after apply)
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "node.serviceAccount.name"
+          + value = "aws-fsx-csi-node-sa"
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # module.eks_blueprints_addons.module.aws_load_balancer_controller.data.aws_caller_identity.current[0] will be read during apply
+  # (depends on a resource or a module with changes pending)
+ <= data "aws_caller_identity" "current" {
+      + account_id = (known after apply)
+      + arn        = (known after apply)
+      + id         = (known after apply)
+      + user_id    = (known after apply)
+    }
+
+  # module.eks_blueprints_addons.module.aws_load_balancer_controller.data.aws_iam_policy_document.assume[0] will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_iam_policy_document" "assume" {
+      + id            = (known after apply)
+      + json          = (known after apply)
+      + minified_json = (known after apply)
+
+      + statement {
+          + actions = [
+              + "sts:AssumeRoleWithWebIdentity",
+            ]
+          + effect  = "Allow"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "sts.amazonaws.com",
+                ]
+              + variable = (known after apply)
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "system:serviceaccount:kube-system:aws-load-balancer-controller-sa",
+                ]
+              + variable = (known after apply)
+            }
+
+          + principals {
+              + identifiers = [
+                  + (known after apply),
+                ]
+              + type        = "Federated"
+            }
+        }
+    }
+
+  # module.eks_blueprints_addons.module.aws_load_balancer_controller.data.aws_iam_policy_document.this[0] will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_iam_policy_document" "this" {
+      + id                        = (known after apply)
+      + json                      = (known after apply)
+      + minified_json             = (known after apply)
+      + override_policy_documents = []
+      + source_policy_documents   = [
+          + (known after apply),
+        ]
+    }
+
+  # module.eks_blueprints_addons.module.aws_load_balancer_controller.data.aws_partition.current[0] will be read during apply
+  # (depends on a resource or a module with changes pending)
+ <= data "aws_partition" "current" {
+      + dns_suffix         = (known after apply)
+      + id                 = (known after apply)
+      + partition          = (known after apply)
+      + reverse_dns_prefix = (known after apply)
+    }
+
+  # module.eks_blueprints_addons.module.aws_load_balancer_controller.aws_iam_policy.this[0] will be created
+  + resource "aws_iam_policy" "this" {
+      + arn              = (known after apply)
+      + attachment_count = (known after apply)
+      + description      = "IAM Policy for AWS Load Balancer Controller"
+      + id               = (known after apply)
+      + name             = (known after apply)
+      + name_prefix      = "alb-controller-"
+      + path             = "/"
+      + policy           = (known after apply)
+      + policy_id        = (known after apply)
+      + tags_all         = (known after apply)
+    }
+
+  # module.eks_blueprints_addons.module.aws_load_balancer_controller.aws_iam_role.this[0] will be created
+  + resource "aws_iam_role" "this" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = (known after apply)
+      + create_date           = (known after apply)
+      + description           = "IRSA for aws-load-balancer-controller project"
+      + force_detach_policies = true
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = (known after apply)
+      + name_prefix           = "alb-controller-"
+      + path                  = "/"
+      + tags_all              = (known after apply)
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # module.eks_blueprints_addons.module.aws_load_balancer_controller.aws_iam_role_policy_attachment.this[0] will be created
+  + resource "aws_iam_role_policy_attachment" "this" {
+      + id         = (known after apply)
+      + policy_arn = (known after apply)
+      + role       = (known after apply)
+    }
+
+  # module.eks_blueprints_addons.module.aws_load_balancer_controller.helm_release.this[0] will be created
+  + resource "helm_release" "this" {
+      + atomic                     = false
+      + chart                      = "aws-load-balancer-controller"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + description                = "A Helm chart to deploy aws-load-balancer-controller for ingress resources"
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "aws-load-balancer-controller"
+      + namespace                  = "kube-system"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + repository                 = "https://aws.github.io/eks-charts"
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + values                     = []
+      + verify                     = false
+      + version                    = "1.13.2"
+      + wait                       = true
+      + wait_for_jobs              = false
+
+      + set {
+          + name  = "clusterName"
+          + value = (known after apply)
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn"
+          + value = (known after apply)
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "serviceAccount.name"
+          + value = "aws-load-balancer-controller-sa"
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "vpcId"
+          + value = "vpc-0b76bd974b3f6904b"
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # module.eks_blueprints_addons.module.metrics_server.helm_release.this[0] will be created
+  + resource "helm_release" "this" {
+      + atomic                     = false
+      + chart                      = "metrics-server"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + description                = "A Helm chart to install the Metrics Server"
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "metrics-server"
+      + namespace                  = "kube-system"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + repository                 = "https://kubernetes-sigs.github.io/metrics-server/"
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + values                     = []
+      + verify                     = false
+      + version                    = "3.12.0"
+      + wait                       = false
+      + wait_for_jobs              = false
+    }
+
+  # module.istio.module.istio_base.helm_release.this[0] will be created
+  + resource "helm_release" "this" {
+      + atomic                     = false
+      + chart                      = "base"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + description                = "Istio base"
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "istio-base"
+      + namespace                  = "istio-system"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + repository                 = "https://istio-release.storage.googleapis.com/charts"
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + verify                     = false
+      + version                    = "1.26.0"
+      + wait                       = true
+      + wait_for_jobs              = false
+    }
+
+  # module.istio.module.istio_cni.helm_release.this[0] will be created
+  + resource "helm_release" "this" {
+      + atomic                     = false
+      + chart                      = "cni"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + description                = "Istio cni"
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "istio-cni"
+      + namespace                  = "istio-system"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + repository                 = "https://istio-release.storage.googleapis.com/charts"
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + values                     = [
+          + <<-EOT
+                cni:
+                  excludeNamespaces:
+                    - istio-system
+                    - kube-system
+            EOT,
+        ]
+      + verify                     = false
+      + version                    = "1.26.0"
+      + wait                       = true
+      + wait_for_jobs              = false
+    }
+
+  # module.istio.module.istio_istiod.helm_release.this[0] will be created
+  + resource "helm_release" "this" {
+      + atomic                     = false
+      + chart                      = "istiod"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + description                = "Istio istiod"
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "istio-istiod"
+      + namespace                  = "istio-system"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + repository                 = "https://istio-release.storage.googleapis.com/charts"
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + values                     = [
+          + <<-EOT
+                meshConfig:
+                  accessLogFile: /dev/stdout
+                  defaultConfig:
+                    proxyMetadata: {}
+                    tracing: {}
+                  enablePrometheusMerge: true
+                  rootNamespace: istio-system
+                  tcpKeepalive:
+                    interval: 5s
+                    probes: 3
+                    time: 10s
+                  trustDomain: cluster.local
+                  extensionProviders:
+                    - name: oauth2-proxy
+                      envoyExtAuthzHttp:
+                        service: oauth2-proxy.auth.svc.cluster.local
+                        port: 80
+                        includeRequestHeadersInCheck: ["authorization", "cookie"]
+                        headersToUpstreamOnAllow: ["authorization", "path", "x-auth-request-user", "x-auth-request-email", "x-auth-request-access-token"]
+                        headersToDownstreamOnDeny: ["content-type", "set-cookie"]
+                pilot:
+                  env:
+                    ENABLE_DEBUG_ON_HTTP: false
+                    CLOUD_PLATFORM: aws
+                istio_cni:
+                  enabled: true
+                  chained: true
+                global:
+                  istioNamespace:  istio-system
+            EOT,
+        ]
+      + verify                     = false
+      + version                    = "1.26.0"
+      + wait                       = true
+      + wait_for_jobs              = false
+    }
+
+Plan: 98 to add, 0 to change, 2 to destroy.
+
+Changes to Outputs:
+  + cluster_endpoint     = (known after apply)
+  + cluster_id           = (known after apply)
+  + cluster_oidc_arn     = (known after apply)
+  + node_role_arn        = (known after apply)
+null_resource.git_clone: Destroying... [id=6541184323335191507]
+null_resource.git_clone: Destruction complete after 0s
+null_resource.git_clone: Creating...
+null_resource.git_clone: Provisioning with 'local-exec'...
+null_resource.git_clone (local-exec): Executing: ["/bin/sh" "-c" "rm -rf /tmp/lws || true\ngit clone https://github.com/kubernetes-sigs/lws.git /tmp/lws\ncd /tmp/lws\ngit fetch origin aceee3387f2424067777c32db14378909c3633a5\ngit reset --hard aceee3387f2424067777c32db14378909c3633a5\n"]
+null_resource.git_clone (local-exec): Cloning into '/tmp/lws'...
+aws_fsx_data_repository_association.this: Destroying... [id=dra-0e034d4368fb6a74e]
+aws_iam_role.cluster_role: Creating...
+aws_iam_role.cluster_role: Creation complete after 2s [id=efa-blog-cluster-control-role]
+aws_iam_role_policy_attachment.cluster_AmazonEKSClusterPolicy: Creating...
+aws_iam_role_policy_attachment.cluster_AmazonEKSServicePolicy: Creating...
+aws_eks_cluster.eks_cluster: Creating...
+null_resource.git_clone (local-exec): From https://github.com/kubernetes-sigs/lws
+null_resource.git_clone (local-exec):  * branch            aceee3387f2424067777c32db14378909c3633a5 -> FETCH_HEAD
+null_resource.git_clone (local-exec): HEAD is now at aceee33 Add controllerrevisions rbac to helm chart. (#455)
+null_resource.git_clone: Creation complete after 2s [id=494535751356460175]
+aws_iam_role_policy_attachment.cluster_AmazonEKSServicePolicy: Creation complete after 1s [id=efa-blog-cluster-control-role/arn:aws:iam::aws:policy/AmazonEKSServicePolicy]
+aws_iam_role_policy_attachment.cluster_AmazonEKSClusterPolicy: Creation complete after 1s [id=efa-blog-cluster-control-role/arn:aws:iam::aws:policy/AmazonEKSClusterPolicy]
+aws_fsx_data_repository_association.this: Still destroying... [id=dra-0e034d4368fb6a74e, 00m10s elapsed]
+aws_fsx_data_repository_association.this: Still destroying... [id=dra-0e034d4368fb6a74e, 00m20s elapsed]
+aws_fsx_data_repository_association.this: Still destroying... [id=dra-0e034d4368fb6a74e, 00m30s elapsed]
+
+Warning: Value for undeclared variable
+
+The root module does not declare a variable named "capacity_reservation_id"
+but a value was found in file "terraform.tfvars". If you meant to use this
+value, add a "variable" block to the configuration.
+
+To silence these warnings, use TF_VAR_... environment variables to provide
+certain "global" settings to all configurations in your organization. To
+reduce the verbosity of these warnings, use the -compact-warnings option.
+
+Warning: Deprecated attribute
+
+  on .terraform/modules/eks_blueprints_addons/main.tf line 21, in locals:
+  21:   region     = data.aws_region.current.name
+
+The attribute "name" is deprecated. Refer to the provider documentation for
+details.
+
+(and 4 more similar warnings elsewhere)
+
+Error: waiting for FSx for Lustre Data Repository Association (dra-0e034d4368fb6a74e) delete: unexpected state 'CREATING', wanted target ''. last error: %!s(<nil>)
+
+
+Error: creating EKS Cluster (efa-blog-cluster): operation error EKS: CreateCluster, https response error StatusCode: 409, RequestID: dd9d03f2-2130-4b8e-9856-b80c74cbd3ba, ResourceInUseException: Cluster already exists with name: efa-blog-cluster
+
+  with aws_eks_cluster.eks_cluster,
+  on main.tf line 298, in resource "aws_eks_cluster" "eks_cluster":
+ 298: resource "aws_eks_cluster" "eks_cluster" {
+
+[2025-08-13 18:57:49] Retrieving cluster information...
+cluster_subnets = [
+  "subnet-00703776efcad98a4",
+  "subnet-0705bc7c8b5b22fea",
+  "subnet-0723a6a23707c4ffe",
+]
+cluster_version = "1.33"
+cluster_vpc = "vpc-0b76bd974b3f6904b"
+efs_dns = "fs-058f520ab98e60ed5.efs.ap-southeast-4.amazonaws.com"
+efs_id = "fs-058f520ab98e60ed5"
+fsx_id = "fs-0cafc107ceb50dc93"
+fsx_mount_name = "rlkx3bmv"
+mlflow_db_secret_arn = []
+slurm_db_password = <sensitive>
+static_email = "user@example.com"
+static_password = <sensitive>
+static_username = "user"
+[2025-08-13 18:57:53] EKS cluster creation process completed successfully
+[2025-08-13 18:57:53] Log file saved to: logs/eks_creation_20250813_185626.log
