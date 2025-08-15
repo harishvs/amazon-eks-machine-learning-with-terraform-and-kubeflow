@@ -90,7 +90,7 @@ variable "key_pair" {
 variable "node_volume_size" {
   description = "Node disk size in GB"
   type = number
-  default = 200
+  default = 1000
 }
 
 variable "node_group_desired" {
@@ -164,7 +164,7 @@ variable "efa_enabled" {
     "p5en.48xlarge" = 32
     "trn1.32xlarge" = 8
     "trn1n.32xlarge" = 16
-    "trn2.48xlarge" = 32
+    "trn2.48xlarge" = 16
   }
 }
 
@@ -501,6 +501,12 @@ variable "mlflow_db_max_capacity" {
   description = "MLFlow DB Max Capacity"
   type        = number
   default = 16.0
+}
+
+variable capacity_reservation_id {
+  description = "targetted odcr id"
+  type = string
+  default = ""
 }
 
 # END variables
