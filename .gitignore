@@ -4,3 +4,7 @@
 **/.ipynb_checkpoints/*
 **/.DS_Store
 eks-cluster/terraform/aws-eks-cluster-and-nodegroup/logs/*
+.env
+logs/*
+aloasi.txt
+*.log
