@@ -1,3 +1,50 @@
+# Security group for trn2 worker nodes with EFA support
+resource "aws_security_group" "trn2_worker_sg" {
+  name        = "${var.cluster_name}-trn2-worker-sg"
+  description = "Security group for trn2 worker nodes with EFA support"
+  vpc_id      = aws_vpc.vpc.id
+
+  # Allow all traffic from the same security group (required for EFA)
+  ingress {
+    from_port = 0
+    to_port   = 0
+    protocol  = "-1"
+    self      = true
+    description = "Self-referencing ingress rule for EFA"
+  }
+
+  # Allow all ingress traffic from VPC CIDR (required for EKS cluster communication)
+  ingress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = [var.cidr_vpc]
+    description = "Allow all traffic from VPC CIDR"
+  }
+
+  # Allow outbound traffic to same security group
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    self        = true
+    description = "Self-referencing egress rule for EFA"
+  }
+
+  # Allow all outbound traffic to internet (required for EKS node registration and image pulls)
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+    description = "Allow all outbound traffic to internet"
+  }
+
+  tags = {
+    Name = "${var.cluster_name}-trn2-worker-sg"
+  }
+}
+
 # Managed Node Group for trn2.48xlarge instances
 resource "aws_launch_template" "trn2_48xlarge" {
   name_prefix   = "${var.cluster_name}-trn2-48xlarge-"
@@ -32,6 +79,7 @@ resource "aws_launch_template" "trn2_48xlarge" {
       associate_public_ip_address = false
       interface_type              = "efa"
       network_card_index          = nic.value
+      security_groups             = [aws_security_group.trn2_worker_sg.id]
     }
   }
 
@@ -111,6 +159,7 @@ resource "aws_eks_node_group" "trn2_48xlarge" {
     aws_subnet.public,
     aws_route_table_association.private,
     aws_route_table_association.public,
+    aws_security_group.trn2_worker_sg,
     helm_release.cluster-autoscaler
   ]
 }
