@@ -92,6 +92,22 @@ train:
       value: "efa"
     - name: FI_EFA_FORK_SAFE
       value: "1"
+    - name: NCCL_PROTO
+      value: "simple"
+    - name: NCCL_ALGO
+      value: "ring"
+    - name: NCCL_DEBUG
+      value: "INFO"
+    - name: NCCL_SOCKET_IFNAME
+      value: "^docker0,lo"
+    - name: NCCL_NET_GDR_LEVEL
+      value: "PHB"
+    - name: NCCL_CROSS_NIC
+      value: "1"
+    - name: NCCL_COLLNET_ENABLE
+      value: "1"
+    - name: NCCL_TREE_THRESHOLD
+      value: "0"
     - name:  NEURON_FUSE_SOFTMAX
       value: "1"
     - name: NEURON_RT_STOCHASTIC_ROUNDING_EN
