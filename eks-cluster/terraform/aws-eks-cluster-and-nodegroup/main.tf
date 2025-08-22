@@ -17,7 +17,7 @@ provider "aws" {
 
 # AWS EKS cluster authentication data source
 data "aws_eks_cluster_auth" "cluster" {
-  name = var.cluster_name
+  name = module.eks.cluster_name
 }
 
 # Retrieves an authorization token for public ECR registry to authenticate image pulls.
@@ -47,141 +47,124 @@ provider "kubernetes" {
 }
 
 data "aws_caller_identity" "current" {}
+data "aws_availability_zones" "available" {}
 
-resource "aws_vpc" "vpc" {
-  cidr_block           = var.cidr_vpc
-  enable_dns_support   = true
+locals {
+  use_k8s_version = substr(var.k8s_version, 0, 3) == "1.1" ? "1.33" : var.k8s_version
+  s3_bucket       = split("/", substr(var.import_path, 5, -1))[0]
+}
+
+# VPC Module
+module "vpc" {
+  source  = "terraform-aws-modules/vpc/aws"
+  version = "~> 5.0"
+
+  name = var.cluster_name
+  cidr = var.cidr_vpc
+
+  azs             = var.azs
+  private_subnets = var.cidr_private
+  public_subnets  = var.cidr_public
+
+  enable_nat_gateway   = true
+  single_nat_gateway   = true
   enable_dns_hostnames = true
+  enable_dns_support   = true
 
-  tags = {
-    Name = "${var.cluster_name}-vpc",
+  public_subnet_tags = {
+    "kubernetes.io/role/elb" = "1"
   }
 
-}
-
-resource "aws_subnet" "private" {
-  count = length(var.azs)
-
-  availability_zone = var.azs[count.index]
-  cidr_block        = var.cidr_private[count.index]
-  vpc_id            = aws_vpc.vpc.id
-
-  tags = {
-    Name                                        = "${var.cluster_name}-subnet-${count.index}",
-    "kubernetes.io/cluster/${var.cluster_name}" = "shared",
-    "kubernetes.io/role/internal-elb" : "1",
-    "karpenter.sh/discovery"         = "${var.cluster_name}"
-    "karpenter.sh/discovery/neuron"  = var.azs[count.index] == var.neuron_az ? "${var.cluster_name}" : "nil"
-    "karpenter.sh/discovery/cudaefa" = var.azs[count.index] == var.cuda_efa_az ? "${var.cluster_name}" : "nil"
+  private_subnet_tags = {
+    "kubernetes.io/role/internal-elb" = "1"
+    "karpenter.sh/discovery"          = var.cluster_name
+    "karpenter.sh/discovery/neuron"   = var.neuron_az != "none" ? var.cluster_name : "nil"
+    "karpenter.sh/discovery/cudaefa"  = var.cuda_efa_az != "none" ? var.cluster_name : "nil"
   }
 
+  tags = merge(var.tags, {
+    "kubernetes.io/cluster/${var.cluster_name}" = "shared"
+  })
 }
 
-resource "aws_subnet" "public" {
-  count = length(var.azs)
+# EKS Module
+module "eks" {
+  source  = "terraform-aws-modules/eks/aws"
+  version = "~> 20.0"
 
-  availability_zone = var.azs[count.index]
-  cidr_block        = var.cidr_public[count.index]
-  vpc_id            = aws_vpc.vpc.id
+  cluster_name    = var.cluster_name
+  cluster_version = local.use_k8s_version
 
-  tags = {
-    Name                                        = "${var.cluster_name}-subnet-${count.index}",
-    "kubernetes.io/cluster/${var.cluster_name}" = "shared",
-    "kubernetes.io/role/elb"                    = "1"
-  }
+  vpc_id                         = module.vpc.vpc_id
+  subnet_ids                     = module.vpc.private_subnets
+  cluster_endpoint_public_access = true
 
-}
+  enable_cluster_creator_admin_permissions = true
+  
+  cluster_enabled_log_types = ["api", "audit"]
 
-resource "aws_internet_gateway" "igw" {
-  vpc_id = aws_vpc.vpc.id
-
-  tags = {
-    Name = "${var.cluster_name}-igw"
-  }
-}
-
-resource "aws_eip" "ip" {
-}
-
-resource "aws_nat_gateway" "ngw" {
-  allocation_id = aws_eip.ip.id
-  subnet_id     = aws_subnet.public[0].id
-
-  tags = {
-    Name = "${var.cluster_name}-ngw"
-  }
-
-}
-
-resource "aws_route_table" "private" {
-  vpc_id = aws_vpc.vpc.id
-
-  route {
-    cidr_block     = "0.0.0.0/0"
-    nat_gateway_id = aws_nat_gateway.ngw.id
-  }
-
-  tags = {
-    Name = "${var.cluster_name}-private"
-  }
-}
-
-resource "aws_route_table" "public" {
-  vpc_id = aws_vpc.vpc.id
-
-  route {
-    cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.igw.id
-  }
-
-  tags = {
-    Name = "${var.cluster_name}-public"
-  }
-}
-
-resource "aws_route_table_association" "private" {
-  count = length(var.azs)
-
-  subnet_id      = aws_subnet.private.*.id[count.index]
-  route_table_id = aws_route_table.private.id
-}
-
-resource "aws_route_table_association" "public" {
-  count = length(var.azs)
-
-  subnet_id      = aws_subnet.public.*.id[count.index]
-  route_table_id = aws_route_table.public.id
-}
-
-
-resource "aws_iam_role" "cluster_role" {
-  name = "${var.cluster_name}-control-role"
-
-  assume_role_policy = <<POLICY
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Principal": {
-        "Service": "eks.amazonaws.com"
-      },
-      "Action": "sts:AssumeRole"
+  # EKS Managed Node Groups
+  eks_managed_node_groups = {
+    # System node group
+    system = {
+      name           = "system"
+      instance_types = var.system_instances
+      capacity_type  = var.system_capacity_type
+      
+      min_size     = var.system_group_min
+      max_size     = var.system_group_max
+      desired_size = var.system_group_desired
+      
+      disk_size = var.system_volume_size
+      ami_type  = "AL2023_x86_64_STANDARD"
+      
+      key_name = var.key_pair != "" ? var.key_pair : null
+      
+      labels = {
+        role = "system"
+      }
     }
-  ]
-}
-POLICY
+
+    # TRN2 node group - direct configuration without launch template
+    trn2_48xlarge = {
+      name           = "trn2-48xlarge"
+      instance_types = ["trn2.48xlarge"]
+      capacity_type  = var.capacity_type
+      
+      min_size     = 2
+      max_size     = 2
+      desired_size = 2
+      
+      disk_size = var.node_volume_size
+      ami_type  = "AL2023_x86_64_NEURON"
+      
+      key_name = var.key_pair != "" ? var.key_pair : null
+      
+      taints = [
+        {
+          key    = "aws.amazon.com/neuron"
+          value  = "true"
+          effect = "NO_SCHEDULE"
+        },
+        {
+          key    = "fsx.csi.aws.com/agent-not-ready"
+          effect = "NO_EXECUTE"
+        }
+      ]
+      
+      labels = {
+        "node.kubernetes.io/instance-type" = "trn2.48xlarge"
+        "aws.amazon.com/neuron"            = "true"
+        "aws.amazon.com/efa"               = "true"
+      }
+    }
+  }
+
+  tags = var.tags
 }
 
-resource "aws_iam_role_policy_attachment" "cluster_AmazonEKSClusterPolicy" {
-  policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
-  role       = aws_iam_role.cluster_role.name
-}
 
-resource "aws_iam_role_policy_attachment" "cluster_AmazonEKSServicePolicy" {
-  policy_arn = "arn:aws:iam::aws:policy/AmazonEKSServicePolicy"
-  role       = aws_iam_role.cluster_role.name
-}
+
 
 resource "aws_efs_file_system" "fs" {
 
@@ -199,7 +182,7 @@ resource "aws_efs_file_system" "fs" {
 resource "aws_security_group" "efs_sg" {
   name        = "${var.cluster_name}-efs-sg"
   description = "Security group for efs clients in vpc"
-  vpc_id      = aws_vpc.vpc.id
+  vpc_id      = module.vpc.vpc_id
 
   egress {
     from_port   = 2049
@@ -212,7 +195,7 @@ resource "aws_security_group" "efs_sg" {
     from_port   = 2049
     to_port     = 2049
     protocol    = "tcp"
-    cidr_blocks = [aws_vpc.vpc.cidr_block]
+    cidr_blocks = [module.vpc.vpc_cidr_block]
   }
 
   tags = {
@@ -224,16 +207,16 @@ resource "aws_efs_mount_target" "target" {
   count          = length(var.azs)
   file_system_id = aws_efs_file_system.fs.id
 
-  subnet_id       = aws_subnet.private.*.id[count.index]
+  subnet_id       = module.vpc.private_subnets[count.index]
   security_groups = [aws_security_group.efs_sg.id]
 
-  depends_on = [aws_subnet.private, aws_security_group.efs_sg]
+  depends_on = [aws_security_group.efs_sg]
 }
 
 resource "aws_security_group" "fsx_lustre_sg" {
   name        = "${var.cluster_name}-fsx-lustre-sg"
   description = "Security group for fsx lustre clients in vpc"
-  vpc_id      = aws_vpc.vpc.id
+  vpc_id      = module.vpc.vpc_id
 
   egress {
     from_port   = 988
@@ -246,7 +229,7 @@ resource "aws_security_group" "fsx_lustre_sg" {
     from_port   = 988
     to_port     = 988
     protocol    = "tcp"
-    cidr_blocks = [aws_vpc.vpc.cidr_block]
+    cidr_blocks = [module.vpc.vpc_cidr_block]
   }
 
   tags = {
@@ -258,7 +241,7 @@ resource "aws_fsx_lustre_file_system" "fs" {
   file_system_type_version = "2.15"
 
   storage_capacity = var.fsx_storage_capacity
-  subnet_ids       = [aws_subnet.private[0].id]
+  subnet_ids       = [module.vpc.private_subnets[0]]
   deployment_type  = "SCRATCH_2"
 
   security_group_ids = [aws_security_group.fsx_lustre_sg.id]
@@ -289,40 +272,9 @@ resource "aws_fsx_data_repository_association" "this" {
   }
 }
 
-locals {
-  use_k8s_version = substr(var.k8s_version, 0, 3) == "1.1" ? "1.33" : var.k8s_version
-  s3_bucket       = split("/", substr(var.import_path, 5, -1))[0]
-}
 
-resource "aws_eks_cluster" "eks_cluster" {
-  name                      = var.cluster_name
-  role_arn                  = aws_iam_role.cluster_role.arn
-  version                   = local.use_k8s_version
-  enabled_cluster_log_types = ["api", "audit"]
 
-  vpc_config {
-    subnet_ids = flatten([aws_subnet.private.*.id])
-  }
 
-  provisioner "local-exec" {
-    when    = destroy
-    command = "kubectl config unset current-context"
-  }
-
-  provisioner "local-exec" {
-    command = "aws --region ${var.region} eks update-kubeconfig --name ${aws_eks_cluster.eks_cluster.name}"
-  }
-
-}
-
-resource "aws_security_group_rule" "eks_cluster_ingress" {
-  type              = "ingress"
-  from_port         = 0
-  to_port           = 65535
-  protocol          = "all"
-  cidr_blocks       = [aws_vpc.vpc.cidr_block]
-  security_group_id = aws_eks_cluster.eks_cluster.vpc_config[0].cluster_security_group_id
-}
 
 module "ebs_csi_driver_irsa" {
   source  = "aws-ia/eks-blueprints-addon/aws"
@@ -334,14 +286,14 @@ module "ebs_csi_driver_irsa" {
   # IAM role for service account (IRSA)
   create_role   = true
   create_policy = false
-  role_name     = substr("${aws_eks_cluster.eks_cluster.id}-ebs-csi-driver", 0, 38)
+  role_name     = substr("${module.eks.cluster_name}-ebs-csi-driver", 0, 38)
   role_policies = {
     AmazonEBSCSIDriverPolicy = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
   }
 
   oidc_providers = {
     this = {
-      provider_arn    = aws_iam_openid_connect_provider.eks_oidc_provider.arn
+      provider_arn    = module.eks.oidc_provider_arn
       namespace       = "kube-system"
       service_account = "ebs-csi-controller-sa"
     }
@@ -356,10 +308,10 @@ module "eks_blueprints_addons" {
   source  = "aws-ia/eks-blueprints-addons/aws"
   version = "1.21.0"
 
-  cluster_name      = aws_eks_cluster.eks_cluster.id
-  cluster_endpoint  = aws_eks_cluster.eks_cluster.endpoint
-  cluster_version   = aws_eks_cluster.eks_cluster.version
-  oidc_provider_arn = aws_iam_openid_connect_provider.eks_oidc_provider.arn
+  cluster_name      = module.eks.cluster_name
+  cluster_endpoint  = module.eks.cluster_endpoint
+  cluster_version   = module.eks.cluster_version
+  oidc_provider_arn = module.eks.oidc_provider_arn
 
   enable_aws_load_balancer_controller = true
   enable_metrics_server               = true
@@ -374,7 +326,7 @@ module "eks_blueprints_addons" {
     set = [
       {
         name  = "vpcId"
-        value = aws_vpc.vpc.id
+        value = module.vpc.vpc_id
       }
     ]
   }
@@ -472,7 +424,7 @@ module "cert_manager" {
 
   oidc_providers = {
     this = {
-      provider_arn = aws_iam_openid_connect_provider.eks_oidc_provider.arn
+      provider_arn = module.eks.oidc_provider_arn
       # namespace is inherited from chart
       service_account = "cert-manager"
     }
@@ -491,12 +443,12 @@ resource "aws_iam_role" "cluster_autoscaler" {
       {
       "Effect": "Allow",
       "Principal": {
-          "Federated": "${aws_iam_openid_connect_provider.eks_oidc_provider.arn}"
+          "Federated": "${module.eks.oidc_provider_arn}"
       },
       "Action": "sts:AssumeRoleWithWebIdentity",
       "Condition": {
           "StringEquals": {
-          "${substr(aws_eks_cluster.eks_cluster.identity[0].oidc[0].issuer, 8, -1)}:aud": "sts.amazonaws.com"
+          "${replace(module.eks.cluster_oidc_issuer_url, "https://", "")}:aud": "sts.amazonaws.com"
           }
       }
       }
@@ -522,7 +474,7 @@ resource "aws_iam_role_policy" "cluster_autoscaler" {
         "Condition" : {
           "StringEquals" : {
             "aws:ResourceTag/k8s.io/cluster-autoscaler/enabled" : "true",
-            "aws:ResourceTag/k8s.io/cluster-autoscaler/${aws_eks_cluster.eks_cluster.id}" : "owned"
+            "aws:ResourceTag/k8s.io/cluster-autoscaler/${module.eks.cluster_name}" : "owned"
           }
         }
       },
@@ -560,7 +512,7 @@ resource "helm_release" "cluster-autoscaler" {
       cloudProvider: "aws"
       awsRegion: "${var.region}"
       autoDiscovery:
-        clusterName: "${aws_eks_cluster.eks_cluster.id}"
+        clusterName: "${module.eks.cluster_name}"
       extraArgs:
         skip-nodes-with-system-pods: "false"
         skip-nodes-with-local-storage: "false"
@@ -575,7 +527,7 @@ resource "helm_release" "cluster-autoscaler" {
     EOT
   ]
 
-  depends_on = [aws_eks_node_group.system_ng]
+  depends_on = [module.eks]
 
 }
 
@@ -658,19 +610,10 @@ resource "kubernetes_namespace" "lws-system" {
   depends_on = [helm_release.cluster-autoscaler]
 }
 
-data "tls_certificate" "this" {
-  url = aws_eks_cluster.eks_cluster.identity[0].oidc[0].issuer
-}
 
-resource "aws_iam_openid_connect_provider" "eks_oidc_provider" {
-  client_id_list  = ["sts.amazonaws.com"]
-  thumbprint_list = [data.tls_certificate.this.certificates[0].sha1_fingerprint]
-  url             = aws_eks_cluster.eks_cluster.identity[0].oidc[0].issuer
-
-}
 
 resource "aws_iam_role" "node_role" {
-  name = "${aws_eks_cluster.eks_cluster.id}-node-role"
+  name = "${module.eks.cluster_name}-node-role"
 
   assume_role_policy = jsonencode({
     "Version" : "2012-10-17",
@@ -706,37 +649,7 @@ resource "aws_iam_role_policy_attachment" "node_AmazonS3ReadOnlyPolicy" {
   role       = aws_iam_role.node_role.name
 }
 
-resource "aws_eks_node_group" "system_ng" {
-  cluster_name    = aws_eks_cluster.eks_cluster.id
-  node_group_name = "system"
-  node_role_arn   = aws_iam_role.node_role.arn
-  subnet_ids      = aws_subnet.private.*.id
-  instance_types  = var.system_instances
-  disk_size       = var.system_volume_size
-  ami_type        = "AL2023_x86_64_STANDARD"
-  capacity_type   = var.system_capacity_type
 
-  scaling_config {
-    desired_size = var.system_group_desired
-    max_size     = var.system_group_max
-    min_size     = var.system_group_min
-  }
-
-  dynamic "remote_access" {
-    for_each = var.key_pair != "" ? [1] : []
-    content {
-      ec2_ssh_key = var.key_pair
-    }
-  }
-
-  depends_on = [
-    aws_subnet.private,
-    aws_subnet.public,
-    aws_route_table_association.private,
-    aws_route_table_association.public,
-    kubectl_manifest.aws_auth
-  ]
-}
 
 resource "aws_launch_template" "nvidia" {
 
@@ -918,17 +831,17 @@ module "karpenter" {
   source  = "terraform-aws-modules/eks/aws//modules/karpenter"
   version = "20.37.0"
 
-  cluster_name = aws_eks_cluster.eks_cluster.id
+  cluster_name = module.eks.cluster_name
 
-  irsa_oidc_provider_arn          = aws_iam_openid_connect_provider.eks_oidc_provider.arn
+  irsa_oidc_provider_arn          = module.eks.oidc_provider_arn
   irsa_namespace_service_accounts = ["${var.karpenter_namespace}:karpenter"]
 
   create_iam_role      = true
   create_node_iam_role = true
   enable_irsa          = true
   create_access_entry  = false
-  iam_role_name        = "${aws_eks_cluster.eks_cluster.id}-karpenter-controller"
-  node_iam_role_name   = "${aws_eks_cluster.eks_cluster.id}-karpenter-node"
+  iam_role_name        = "${module.eks.cluster_name}-karpenter-controller"
+  node_iam_role_name   = "${module.eks.cluster_name}-karpenter-node"
 
   node_iam_role_attach_cni_policy = true
   node_iam_role_additional_policies = {
@@ -1045,8 +958,8 @@ resource "helm_release" "karpenter" {
             cpu: 1
             memory: 2Gi
       settings:
-        clusterName: "${aws_eks_cluster.eks_cluster.id}"
-        clusterEndpoint: "${aws_eks_cluster.eks_cluster.endpoint}"
+        clusterName: "${module.eks.cluster_name}"
+        clusterEndpoint: "${module.eks.cluster_endpoint}"
         interruptionQueue: "${module.karpenter[0].queue_name}"
       serviceAccount:
         annotations:
@@ -1072,7 +985,7 @@ resource "helm_release" "karpenter_components" {
     <<-EOT
       namespace: "${var.karpenter_namespace}"
       role_name: "${module.karpenter[0].node_iam_role_name}"
-      cluster_id: "${aws_eks_cluster.eks_cluster.id}"
+      cluster_id: "${module.eks.cluster_name}"
       consolidate_after: "${var.karpenter_consolidate_after}"
       capacity_type: "${var.karpenter_capacity_type}"
       max_pods: "${var.karpenter_max_pods}"
