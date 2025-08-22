@@ -1,31 +1,31 @@
 output "cluster_vpc" {
   description = "Cluster VPC ID"
-  value = aws_vpc.vpc.id
+  value = module.vpc.vpc_id
 }
 
 output "cluster_subnets" {
   description = "Cluster Subnet Ids"
-  value = aws_subnet.private.*.id
+  value = module.vpc.private_subnets
 }
 
 output "cluster_id" {
   description = "Cluster Id"
-  value = aws_eks_cluster.eks_cluster.id
+  value = module.eks.cluster_name
 }
 
 output "cluster_version" {
   description = "Cluster version"
-  value = aws_eks_cluster.eks_cluster.version
+  value = module.eks.cluster_version
 }
 
 output "cluster_endpoint" {
   description = "Cluster Endpoint"
-  value = aws_eks_cluster.eks_cluster.endpoint
+  value = module.eks.cluster_endpoint
 }
 
 output "cluster_oidc_arn" {
   description = "Cluster OIDC ARN"
-  value = aws_iam_openid_connect_provider.eks_oidc_provider.arn
+  value = module.eks.oidc_provider_arn
 }
 
 output "node_role_arn" {

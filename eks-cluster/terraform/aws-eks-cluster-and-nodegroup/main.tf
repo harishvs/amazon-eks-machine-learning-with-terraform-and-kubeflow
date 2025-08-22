@@ -26,23 +26,23 @@ data "aws_ecrpublic_authorization_token" "token" {
 }
 
 provider "kubectl" {
-  host                   = aws_eks_cluster.eks_cluster.endpoint
-  cluster_ca_certificate = base64decode(aws_eks_cluster.eks_cluster.certificate_authority[0].data)
+  host                   = module.eks.cluster_endpoint
+  cluster_ca_certificate = base64decode(module.eks.cluster_certificate_authority_data)
   token                  = data.aws_eks_cluster_auth.cluster.token
   load_config_file       = false
 }
 
 provider "helm" {
   kubernetes {
-    host                   = aws_eks_cluster.eks_cluster.endpoint
-    cluster_ca_certificate = base64decode(aws_eks_cluster.eks_cluster.certificate_authority[0].data)
+    host                   = module.eks.cluster_endpoint
+    cluster_ca_certificate = base64decode(module.eks.cluster_certificate_authority_data)
     token                  = data.aws_eks_cluster_auth.cluster.token
   }
 }
 
 provider "kubernetes" {
-  host                   = aws_eks_cluster.eks_cluster.endpoint
-  cluster_ca_certificate = base64decode(aws_eks_cluster.eks_cluster.certificate_authority[0].data)
+  host                   = module.eks.cluster_endpoint
+  cluster_ca_certificate = base64decode(module.eks.cluster_certificate_authority_data)
   token                  = data.aws_eks_cluster_auth.cluster.token
 }
 
@@ -699,7 +699,7 @@ resource "aws_eks_node_group" "nvidia" {
   cluster_name    = var.cluster_name
   node_group_name = "nvidia-${count.index}"
   node_role_arn   = aws_iam_role.node_role.arn
-  subnet_ids      = aws_subnet.private.*.id
+  subnet_ids      = module.vpc.private_subnets
   ami_type        = "AL2023_x86_64_NVIDIA"
   capacity_type   = var.capacity_type
 
@@ -786,7 +786,7 @@ resource "aws_eks_node_group" "neuron" {
   cluster_name    = var.cluster_name
   node_group_name = "neuron-${count.index}"
   node_role_arn   = aws_iam_role.node_role.arn
-  subnet_ids      = aws_subnet.private.*.id
+  subnet_ids      = module.vpc.private_subnets
   ami_type        = "AL2023_x86_64_NEURON"
   capacity_type   = var.capacity_type
 
@@ -1145,7 +1145,7 @@ resource "helm_release" "istio-ingress" {
 }
 
 resource "aws_iam_role" "user_profile_role" {
-  name = "${aws_eks_cluster.eks_cluster.id}-user-profile"
+  name = "${module.eks.cluster_name}-user-profile"
 
   assume_role_policy = <<POLICY
 {
@@ -1154,12 +1154,12 @@ resource "aws_iam_role" "user_profile_role" {
       {
       "Effect": "Allow",
       "Principal": {
-          "Federated": "${aws_iam_openid_connect_provider.eks_oidc_provider.arn}"
+          "Federated": "${module.eks.oidc_provider_arn}"
       },
       "Action": "sts:AssumeRoleWithWebIdentity",
       "Condition": {
           "StringEquals": {
-          "${substr(aws_eks_cluster.eks_cluster.identity[0].oidc[0].issuer, 8, -1)}:aud": "sts.amazonaws.com"
+          "${replace(module.eks.cluster_oidc_issuer_url, "https://", "")}:aud": "sts.amazonaws.com"
           }
       }
       }
@@ -1218,8 +1218,8 @@ module "profiles-controller-irsa" {
   # IAM role for service account (IRSA)
   create_role   = true
   create_policy = true
-  role_name     = substr("${aws_eks_cluster.eks_cluster.id}-profiles-controller", 0, 38)
-  policy_name   = substr("${aws_eks_cluster.eks_cluster.id}-profiles-controller", 0, 38)
+  role_name     = substr("${module.eks.cluster_name}-profiles-controller", 0, 38)
+  policy_name   = substr("${module.eks.cluster_name}-profiles-controller", 0, 38)
   policy_statements = [
     {
       sid       = "statement0"
@@ -1231,7 +1231,7 @@ module "profiles-controller-irsa" {
 
   oidc_providers = {
     this = {
-      provider_arn    = aws_iam_openid_connect_provider.eks_oidc_provider.arn
+      provider_arn    = module.eks.oidc_provider_arn
       namespace       = kubernetes_namespace.kubeflow.metadata[0].name
       service_account = "profiles-controller-service-account"
     }
@@ -1427,12 +1427,12 @@ resource "aws_iam_role" "ack_sagemaker_role" {
       {
       "Effect": "Allow",
       "Principal": {
-          "Federated": "${aws_iam_openid_connect_provider.eks_oidc_provider.arn}"
+          "Federated": "${module.eks.oidc_provider_arn}"
       },
       "Action": "sts:AssumeRoleWithWebIdentity",
       "Condition": {
           "StringEquals": {
-          "${substr(aws_eks_cluster.eks_cluster.identity[0].oidc[0].issuer, 8, -1)}:aud": "sts.amazonaws.com"
+          "${replace(module.eks.cluster_oidc_issuer_url, "https://", "")}:aud": "sts.amazonaws.com"
           }
       }
       }
@@ -1589,11 +1589,11 @@ module "slurm" {
   storage_type             = var.slurm_storage_type
   local_helm_repo          = var.local_helm_repo
   login_enabled            = var.slurm_login_enabled
-  eks_cluster_id           = aws_eks_cluster.eks_cluster.id
+  eks_cluster_id           = module.eks.cluster_name
 
   db_max_capacity = var.slurm_db_max_capacity
-  db_subnet_ids   = aws_subnet.private.*.id
-  db_vpc_id       = aws_vpc.vpc.id
+  db_subnet_ids   = module.vpc.private_subnets
+  db_vpc_id       = module.vpc.vpc_id
   db_port         = 3306
 
   fsx = {
@@ -1616,14 +1616,14 @@ module "mlflow" {
   mlflow_namespace      = var.mlflow_namespace
   mlflow_version        = var.mlflow_version
   force_destroy_bucket  = var.mlflow_force_destroy_bucket
-  eks_cluster_id        = aws_eks_cluster.eks_cluster.id
-  eks_oidc_provider_arn = aws_iam_openid_connect_provider.eks_oidc_provider.arn
-  eks_oidc_issuer       = substr(aws_eks_cluster.eks_cluster.identity[0].oidc[0].issuer, 8, -1)
+  eks_cluster_id        = module.eks.cluster_name
+  eks_oidc_provider_arn = module.eks.oidc_provider_arn
+  eks_oidc_issuer       = replace(module.eks.cluster_oidc_issuer_url, "https://", "")
   admin_username        = var.mlflow_admin_username
   admin_password        = random_password.static_password.result
   db_max_capacity       = var.mlflow_db_max_capacity
-  db_subnet_ids         = aws_subnet.private.*.id
-  db_vpc_id             = aws_vpc.vpc.id
+  db_subnet_ids         = module.vpc.private_subnets
+  db_vpc_id             = module.vpc.vpc_id
   db_port               = 5432
 
   depends_on = [

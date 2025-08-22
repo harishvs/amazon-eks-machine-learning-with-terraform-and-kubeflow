@@ -1,4 +1,4 @@
-cluster_name     = "efa-cluster"
+cluster_name     = "efacluster"
 region           = "ap-southeast-4"
 azs              = ["ap-southeast-4a", "ap-southeast-4b", "ap-southeast-4c"]
 profile          = "default"
