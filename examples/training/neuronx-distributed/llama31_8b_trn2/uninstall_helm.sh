@@ -1,1 +1,0 @@
-helm uninstall nxd-llama31-8b -n kubeflow-user-example-com
